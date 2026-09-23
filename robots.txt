@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://xn----dtbahcnec7cdcenuel2grd.xn--p1ai/sitemap.xml
+Sitemap: https://shityo.maxaicraft.ru/sitemap.xml
