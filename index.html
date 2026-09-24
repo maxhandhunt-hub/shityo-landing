@@ -4,13 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>ШитьЁ — производство одежды полного цикла</title>
-  <meta name="description" content="Контрактное производство одежды в Обнинске: лекала, образец, серийный пошив, брендирование, маркировка и доставка. Заказы от 1 000 единиц.">
-  <link rel="canonical" href="https://shityo.maxaicraft.ru/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:title" content="ШитьЁ — производство одежды полного цикла">
-  <meta property="og:description" content="Контрактное производство одежды в Обнинске: лекала, образец, серийный пошив, брендирование, маркировка и доставка. Заказы от 1 000 единиц.">
-  <meta property="og:url" content="https://shityo.maxaicraft.ru/">
+  <meta name="description" content="Контрактное производство одежды в Обнинске: лекала, образец, серийный пошив, брендирование, маркировка и доставка.">
   <meta name="theme-color" content="#f7fbff">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +27,7 @@
     button{color:inherit}
     .wrap{width:min(var(--max),100%);margin:auto;padding-inline:var(--pad)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .needle-cursor{position:fixed;left:0;top:0;width:32px;height:32px;object-fit:contain;z-index:101;pointer-events:none;opacity:0;transform:translate3d(-48px,-48px,0);transform-origin:2px 1px;will-change:transform,opacity;filter:drop-shadow(0 1px 2px rgba(11,32,56,.28));transition:opacity .12s ease,filter .2s ease}
+    .needle-cursor{position:fixed;left:0;top:0;width:48px;height:48px;object-fit:contain;z-index:101;pointer-events:none;opacity:0;transform:translate3d(-72px,-72px,0);transform-origin:3px 1.5px;will-change:transform,opacity;filter:drop-shadow(0 1px 2px rgba(11,32,56,.28));transition:opacity .12s ease,filter .2s ease}
     .needle-cursor.active{opacity:1}
     .needle-cursor.over-action{filter:drop-shadow(0 1px 3px rgba(23,92,255,.48)) saturate(1.14)}
     .needle-cursor.editing{opacity:0}
@@ -52,6 +46,9 @@
     .nav-shell{min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:24px;border:1px solid rgba(255,255,255,.72);background:rgba(247,251,255,.78);backdrop-filter:blur(18px);border-radius:20px;padding:8px 10px 8px 20px;box-shadow:0 10px 35px rgba(27,75,126,.08)}
     .brand{font-family:Onest,sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-.07em;display:flex;align-items:flex-start}
     .brand::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--coral);margin:2px 0 0 5px}
+    .brand-logo{width:158px;height:46px;align-items:center;flex:0 0 auto}
+    .brand-logo::after{display:none}
+    .brand-logo img{width:100%;height:100%;object-fit:contain;object-position:left center}
     .nav-links{display:flex;gap:28px;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:#445a72}
     .nav-links a{position:relative}
     .nav-links a::after{content:'';position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--blue);transition:.3s}
@@ -148,31 +145,6 @@
     .round{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:.25s}
     .round:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
 
-    .catalog{background:#fff;overflow:hidden}
-    .catalog-tools{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:26px}
-    .catalog-note{color:var(--muted);font-size:.86rem}
-    .catalog-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    .category{grid-column:span 4;position:relative;min-height:500px;border:0;border-radius:28px;overflow:hidden;background:#dce8f4;padding:0;text-align:left;cursor:pointer;color:#fff;view-transition-name:none}
-    .category:nth-child(1),.category:nth-child(5){grid-column:span 6;min-height:580px}
-    .category img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .5s}
-    .category::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,31,56,.88),transparent 62%)}
-    .category:hover img{transform:scale(1.055)}
-    .category-content{position:absolute;z-index:2;left:24px;right:24px;bottom:22px}
-    .category-content small{color:#b7d5ff;text-transform:uppercase;letter-spacing:.15em}
-    .category-content h3{font-family:Onest,sans-serif;font-size:clamp(1.6rem,2.2vw,2.7rem);line-height:1.02;letter-spacing:-.055em;margin:7px 0}
-    .category-content p{margin:0;color:rgba(255,255,255,.72);font-size:.87rem;max-width:520px}
-    .category-arrow{position:absolute;z-index:2;right:18px;top:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.86);color:var(--ink);display:grid;place-items:center;transition:.35s}
-    .category:hover .category-arrow{transform:rotate(45deg);background:var(--coral);color:#fff}
-    .category-dialog{width:min(1160px,calc(100% - 24px));max-height:calc(100svh - 24px);border:0;border-radius:34px;padding:0;background:#fff;color:var(--ink);box-shadow:0 40px 120px rgba(6,29,52,.32);overflow:hidden}
-    .category-dialog::backdrop{background:rgba(13,35,58,.45);backdrop-filter:blur(10px)}
-    .dialog-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:640px}
-    .dialog-image{width:100%;height:100%;object-fit:cover;min-height:640px}
-    .dialog-copy{padding:clamp(30px,5vw,72px);display:flex;flex-direction:column;justify-content:center}
-    .dialog-copy small{color:var(--blue);text-transform:uppercase;letter-spacing:.15em}
-    .dialog-copy h3{font-family:Onest,sans-serif;font-size:clamp(2.3rem,4.3vw,4.8rem);line-height:.95;letter-spacing:-.07em;margin:14px 0 23px}
-    .dialog-copy p{color:var(--muted);font-size:1.08rem}
-    .dialog-close{position:absolute;right:16px;top:16px;z-index:2;width:48px;height:48px;border:0;border-radius:50%;background:#fff;font-size:1.5rem;cursor:pointer}
-
     .quality{background:var(--blue);color:#fff;overflow:hidden}
     .quality::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.18),transparent 30%),repeating-linear-gradient(115deg,transparent 0 85px,rgba(255,255,255,.05) 86px 88px);transform:rotate(-3deg)}
     .quality .wrap{position:relative}
@@ -186,24 +158,6 @@
     .quality-card>span{font-size:.72rem;letter-spacing:.16em;color:#bed6ff}
     .quality-card h3{font-family:Onest,sans-serif;font-size:clamp(1.5rem,2.1vw,2.45rem);line-height:1.02;letter-spacing:-.05em;margin:0 0 10px}
     .quality-card p{color:rgba(255,255,255,.68);margin:0;font-size:.9rem}
-
-    .prices{background:var(--paper)}
-    .prices-head{display:grid;grid-template-columns:1.15fr .85fr;gap:8vw;align-items:end;margin-bottom:48px}
-    .prices-head p{color:var(--muted)}
-    .minimum{display:inline-flex;margin-top:16px;padding:12px 15px;border:1px solid rgba(23,92,255,.18);background:#fff;color:var(--blue);border-radius:999px;font-weight:700;font-size:.82rem}
-    .price-groups{border-top:2px solid var(--ink)}
-    .price-group{border-bottom:1px solid var(--line)}
-    .price-toggle{width:100%;border:0;background:transparent;display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:center;text-align:left;padding:24px 0;cursor:pointer}
-    .price-toggle span{color:var(--blue);font-weight:700}
-    .price-toggle b{font-family:Onest,sans-serif;font-size:clamp(1.35rem,2.2vw,2.55rem);letter-spacing:-.045em}
-    .price-toggle i{font-style:normal;font-size:1.7rem;transition:.35s}
-    .price-group.open .price-toggle i{transform:rotate(45deg);color:var(--coral)}
-    .price-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
-    .price-group.open .price-body{grid-template-rows:1fr}
-    .price-inner{overflow:hidden}
-    .price-table{padding:0 0 30px 74px}
-    .price-row{display:grid;grid-template-columns:1fr auto;gap:25px;padding:12px 0;border-bottom:1px dashed rgba(11,32,56,.15)}
-    .price-row span:last-child{font-weight:700;white-space:nowrap}
 
     .partners{background:#fff;overflow:hidden}
     .partners-head{display:grid;grid-template-columns:1fr .72fr;gap:8vw;align-items:end;margin-bottom:52px}
@@ -290,9 +244,8 @@
     @media(max-width:1120px){
       .nav-links,.nav-phone{display:none}.menu{display:block}
       .hero-grid{grid-template-columns:1fr;align-content:end}.hero-visual{min-height:620px}.hero-copy{max-width:760px}
-      .facts-grid,.section-intro,.quality-head,.prices-head,.partners-head,.contact-grid,.contacts-grid{grid-template-columns:1fr}
+      .facts-grid,.section-intro,.quality-head,.partners-head,.contact-grid,.contacts-grid{grid-template-columns:1fr}
       .process-lab{grid-template-columns:190px 1fr}.process-copy-card{grid-column:1/-1;min-height:auto}.process-media{min-height:620px}
-      .category{grid-column:span 6!important;min-height:520px!important}
       .partners-grid{grid-template-columns:repeat(3,1fr)}.partner-card:nth-child(6){grid-column:auto}.partners-head p{margin-left:0}
       .map-card{min-height:520px}
     }
@@ -302,17 +255,15 @@
       .ribbon-track{animation-duration:26s}.section-pad{padding:80px 0}.section-intro{gap:24px;margin-bottom:34px}.section-title{font-size:clamp(2.5rem,12vw,4.3rem)}
       .facts-grid{gap:35px}.fact-cards{grid-template-columns:1fr 1fr}.fact-card{min-height:170px;padding:18px}.fact-card span{font-size:.82rem}
       .process-lab{display:block}.process-tabs{flex-direction:row;overflow-x:auto;padding:0 0 12px;scroll-snap-type:x mandatory}.process-tab{flex:0 0 auto;display:flex;scroll-snap-align:start}.process-tab strong{white-space:nowrap}.process-tab.active{transform:none}.process-media{min-height:64svh;border-radius:25px}.process-copy-card{margin-top:12px;border-radius:25px;min-height:430px}.process-copy h3{font-size:2.35rem}
-      .catalog-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-18px;padding-right:18px}.category{flex:0 0 86vw;min-height:68svh!important;scroll-snap-align:start}.catalog-tools{align-items:flex-start;flex-direction:column}
-      .dialog-grid{grid-template-columns:1fr}.dialog-image{min-height:42svh;height:42svh}.dialog-copy{padding:28px}.category-dialog{overflow:auto}.dialog-grid{min-height:auto}
       .quality-grid{grid-template-columns:1fr}.quality-card{min-height:220px}
-      .price-toggle{grid-template-columns:36px 1fr auto;gap:9px}.price-table{padding-left:0}.price-row{font-size:.86rem;gap:12px}
+      .brand-logo{width:122px;height:38px}
       .partners-grid{grid-template-columns:1fr 1fr;gap:9px}.partner-card{min-height:120px;padding:17px;border-radius:20px}.partner-card:last-child{grid-column:1/-1}.partners-head{margin-bottom:32px}
       .contact-grid{gap:42px}.contact-meta,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.order-facts{grid-template-columns:1fr}
       .contacts-copy h2{font-size:clamp(3.1rem,17vw,5.2rem)}.contact-detail{grid-template-columns:1fr;gap:5px}.map-card{min-height:430px;border-radius:25px}.map-label{right:14px;left:14px;bottom:14px;max-width:none}
       .footer-inner{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap}
     }
     @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}.stitch-orbit,.ribbon-track,.contact::before{animation:none}.reveal{opacity:1;transform:none;clip-path:none}.hero-title span,.hero-photo,.category img,.process-image{transition:none}
+      html{scroll-behavior:auto}.stitch-orbit,.ribbon-track,.contact::before{animation:none}.reveal{opacity:1;transform:none;clip-path:none}.hero-title span,.hero-photo,.process-image{transition:none}
       .hero-photo img{filter:none}.fabric-wipe{display:none}
     }
   </style>
@@ -331,9 +282,9 @@
   <header class="nav" id="nav">
     <div class="wrap">
       <div class="nav-shell">
-        <a class="brand" href="#top">ШитьЁ</a>
+        <a class="brand brand-logo" href="#top" aria-label="ШитьЁ — на главную"><img src="assets/photo-v11/logo-shityo.webp" alt="ШитьЁ — швейное производство"></a>
         <nav class="nav-links" aria-label="Основная навигация">
-          <a href="#production">Производство</a><a href="#catalog">Ассортимент</a><a href="#prices">Цены</a><a href="#partners">Партнёры</a><a href="#contacts">Контакты</a>
+          <a href="#production">Производство</a><a href="#quality">Преимущества</a><a href="#partners">Партнёры</a><a href="#contacts">Контакты</a>
         </nav>
         <div class="nav-actions">
           <a class="nav-phone" href="tel:+79771357198">+7 977 135-71-98</a>
@@ -363,9 +314,8 @@
         </div>
         <div class="hero-visual" id="hero-visual">
           <div class="stitch-orbit" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="assets/photo-v3/hero-wide.webp" alt="Светлое современное швейное производство с работающими швеями"></div>
+          <div class="hero-photo"><img src="assets/photo-v11/hero-knitwear.webp" alt="Трикотажная одежда на манекене в светлом швейном производстве"></div>
           <div class="float-note one"><b>40 000</b><span>изделий в месяц — текущая мощность</span></div>
-          <div class="float-note two"><b>от 1 000</b><span>единиц — заказ на одну модель</span></div>
         </div>
       </div>
     </section>
@@ -388,7 +338,7 @@
           <div class="fact-cards">
             <article class="fact-card reveal"><b>2013</b><span>работаем на рынке</span></article>
             <article class="fact-card reveal"><b>9</b><span>этапов полного цикла</span></article>
-            <article class="fact-card reveal"><b>1 000+</b><span>изделий на модель</span></article>
+            <article class="fact-card reveal"><b>1</b><span>подрядчик на весь цикл</span></article>
             <article class="fact-card reveal"><b>40 000</b><span>изделий в месяц</span></article>
           </div>
         </div>
@@ -413,22 +363,22 @@
             <button class="process-tab" role="tab" aria-selected="false" data-stage="8"><span>09</span><strong>Доставка</strong></button>
           </div>
           <div class="process-media">
-            <img class="process-image active" src="assets/photo-v3/process-patterns.webp" alt="Разработка лекал">
-            <img class="process-image" src="assets/photo-v3/process-sample.webp" alt="Пошив первого образца">
-            <img class="process-image" src="assets/photo-v3/process-cutting.webp" alt="Раскрой ткани">
-            <img class="process-image" src="assets/photo-v3/process-sewing.webp" alt="Серийный пошив одежды">
-            <img class="process-image" src="assets/photo-v3/process-embroidery.webp" alt="Машинная вышивка">
-            <img class="process-image" src="assets/photo-v3/process-heatpress.webp" alt="Термопечать на одежде">
-            <img class="process-image" src="assets/photo-v3/process-quality.webp" alt="Контроль качества готового изделия">
-            <img class="process-image" src="assets/photo-v3/process-packaging.webp" alt="Упаковка и маркировка изделий">
-            <img class="process-image" src="assets/photo-v3/process-delivery.webp" alt="Доставка готовой партии">
+            <img class="process-image active" src="assets/photo-v11/process-01-patterns.webp" alt="Разработка лекал">
+            <img class="process-image" src="assets/photo-v11/process-02-sample.webp" alt="Пошив первого образца">
+            <img class="process-image" src="assets/photo-v11/process-03-cutting.webp" alt="Раскрой ткани">
+            <img class="process-image" src="assets/photo-v11/process-04-sewing.webp" alt="Серийный пошив одежды">
+            <img class="process-image" src="assets/photo-v11/process-05-embroidery.webp" alt="Машинная вышивка">
+            <img class="process-image" src="assets/photo-v11/process-06-heatpress.webp" alt="Термопечать на одежде">
+            <img class="process-image" src="assets/photo-v11/process-07-quality.webp" alt="Влажно-тепловая обработка и контроль качества">
+            <img class="process-image" src="assets/photo-v11/process-08-packaging.webp" alt="Упаковка и маркировка изделий">
+            <img class="process-image" src="assets/photo-v11/process-09-delivery.webp" alt="Доставка готовой партии">
             <div class="process-counter"><b id="process-number">01</b><span>этап производства</span></div>
           </div>
           <div class="process-copy-card">
             <article class="process-copy active"><small>01 · Конструкция</small><h3>Разработка лекал и градация</h3><p>Изучаем эскизы, фотографии или образцы, создаём базовое лекало, уточняем посадку и детали, масштабируем по размерному ряду и проводим финальную проверку.</p><ul><li>Анализ дизайна</li><li>Базовое лекало</li><li>Градация размеров</li></ul></article>
-            <article class="process-copy"><small>02 · Проверка идеи</small><h3>Пошив образца</h3><p>Создаём опытный образец, проводим примерку, устраняем недочёты и готовим модель к массовому производству.</p><ul><li>Бесплатно от 1 000 единиц</li><li>Примерка и корректировка</li><li>Финальное утверждение</li></ul></article>
+            <article class="process-copy"><small>02 · Проверка идеи</small><h3>Пошив образца</h3><p>Создаём опытный образец, проводим примерку, устраняем недочёты и готовим модель к массовому производству.</p><ul><li>Примерка и корректировка</li><li>Финальное утверждение</li></ul></article>
             <article class="process-copy"><small>03 · Точность</small><h3>Раскрой</h3><p>Высокоточный раскрой на современном оборудовании с подготовкой деталей к дальнейшему производственному потоку.</p></article>
-            <article class="process-copy"><small>04 · Серия</small><h3>Пошив партии</h3><p>Швеи запускают утверждённую модель в производство. Минимальный заказ — 1 000 единиц на модель, текущая мощность — до 40 000 изделий в месяц.</p></article>
+            <article class="process-copy"><small>04 · Серия</small><h3>Пошив партии</h3><p>Швеи запускают утверждённую модель в производство. Текущая мощность — до 40 000 изделий в месяц.</p></article>
             <article class="process-copy"><small>05 · Брендирование</small><h3>Машинная вышивка</h3><p>Наносим вышивку Ricoma на крой, готовую одежду, бейсболки и шевроны.</p><ul><li>Программа бесплатно от 500 изделий</li><li>Помощь с дизайном и цветами</li></ul></article>
             <article class="process-copy"><small>06 · Нанесение</small><h3>Термопечать</h3><p>Переносим принты и элементы брендирования на крой и готовые изделия с помощью профессиональных термопрессов.</p></article>
             <article class="process-copy"><small>07 · Качество</small><h3>ВТО и ОТК</h3><p>Пар, тепло и давление придают изделию форму и товарный вид. Межоперационный и финальный контроль выявляет дефекты до отправки.</p><ul><li>Устранение заломов</li><li>Финальный контроль</li><li>Предотвращение брака</li></ul></article>
@@ -439,30 +389,6 @@
         </div>
       </div>
     </section>
-
-    <section class="catalog section-pad" id="catalog">
-      <div class="wrap">
-        <div class="section-intro">
-          <div><div class="label reveal">Каталог возможностей</div><h2 class="section-title reveal">Одежда для<br>реальных задач</h2></div>
-          <p class="reveal">Подбираем конструкцию, технологию и материалы под назначение изделия, условия эксплуатации и требования бренда.</p>
-        </div>
-        <div class="catalog-tools reveal"><span class="catalog-note">Нажмите на карточку — она плавно раскроется в подробный экран.</span><a class="button light magnetic" href="#order">Запросить расчёт</a></div>
-        <div class="catalog-grid">
-          <article class="category reveal" tabindex="0" role="button" data-title="Спецодежда" data-description="Посадка, комфорт и соответствие особенностям профессии. Разрабатываем форму под реальные условия работы и требования предприятия." data-image="assets/photo-v3/category-workwear.webp"><img src="assets/photo-v3/category-workwear.webp" alt="Современная спецодежда"><span class="category-arrow">↗</span><div class="category-content"><small>01 / 07</small><h3>Спецодежда</h3><p>Посадка, комфорт и требования профессии.</p></div></article>
-          <article class="category reveal" tabindex="0" role="button" data-title="Корпоративная одежда" data-description="Дизайн, производство и брендирование формы в фирменном стиле компании: от первого образца до повторяемой серийной партии." data-image="assets/photo-v3/category-corporate.webp"><img src="assets/photo-v3/category-corporate.webp" alt="Корпоративная одежда"><span class="category-arrow">↗</span><div class="category-content"><small>02 / 07</small><h3>Корпоративная одежда</h3><p>Дизайн, производство и брендирование.</p></div></article>
-          <article class="category reveal" tabindex="0" role="button" data-title="Верхняя одежда" data-description="Куртки и пуховики для зимы, межсезонья и лета. Подбираем утеплитель, подкладку, фурнитуру и технологию обработки." data-image="assets/photo-v3/category-outerwear.webp"><img src="assets/photo-v3/category-outerwear.webp" alt="Верхняя одежда"><span class="category-arrow">↗</span><div class="category-content"><small>03 / 07</small><h3>Верхняя одежда</h3><p>Куртки и пуховики для разных сезонов.</p></div></article>
-          <article class="category reveal" tabindex="0" role="button" data-title="Одежда для активного отдыха" data-description="Функциональный крой, износостойкие и влагозащитные материалы для спорта, туризма и активного отдыха." data-image="assets/photo-v3/category-active.webp"><img src="assets/photo-v3/category-active.webp" alt="Одежда для активного отдыха"><span class="category-arrow">↗</span><div class="category-content"><small>04 / 07</small><h3>Активный отдых</h3><p>Функциональный крой и технологичные материалы.</p></div></article>
-          <article class="category reveal" tabindex="0" role="button" data-title="Женская и мужская одежда" data-description="Производим изделия первого, второго и третьего слоя: от футболок и худи до костюмов и сложных многослойных моделей." data-image="assets/photo-v3/category-adults.webp"><img src="assets/photo-v3/category-adults.webp" alt="Женская и мужская одежда"><span class="category-arrow">↗</span><div class="category-content"><small>05 / 07</small><h3>Женская и мужская</h3><p>Изделия первого, второго и третьего слоя.</p></div></article>
-          <article class="category reveal" tabindex="0" role="button" data-title="Детская одежда" data-description="Бельё, трикотаж, брюки, платья, комбинезоны и куртки с вниманием к посадке, безопасности и комфорту ребёнка." data-image="assets/photo-v3/category-children.webp"><img src="assets/photo-v3/category-children.webp" alt="Детская одежда"><span class="category-arrow">↗</span><div class="category-content"><small>06 / 07</small><h3>Детская одежда</h3><p>Трикотаж, платья, комбинезоны и куртки.</p></div></article>
-          <article class="category reveal" tabindex="0" role="button" data-title="Аксессуары и домашний текстиль" data-description="Сумки, текстильные аксессуары и изделия для дома, отдыха и корпоративных задач — с упаковкой и маркировкой." data-image="assets/photo-v3/category-accessories.webp"><img src="assets/photo-v3/category-accessories.webp" alt="Аксессуары и домашний текстиль"><span class="category-arrow">↗</span><div class="category-content"><small>07 / 07</small><h3>Аксессуары и текстиль</h3><p>Для дома, отдыха и корпоративных задач.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <dialog class="category-dialog" id="category-dialog">
-      <button class="dialog-close" type="button" aria-label="Закрыть">×</button>
-      <div class="dialog-grid"><img class="dialog-image" id="dialog-image" alt=""><div class="dialog-copy"><small>Производственная категория</small><h3 id="dialog-title"></h3><p id="dialog-description"></p><a class="button coral magnetic" href="#order" id="dialog-cta">Рассчитать партию</a></div></div>
-    </dialog>
 
     <section class="quality section-pad" id="quality">
       <div class="wrap">
@@ -477,26 +403,6 @@
           <article class="quality-card tilt reveal"><span>04 / КОМАНДА</span><div><h3>Опытные специалисты</h3><p>Технологи, конструкторы, дизайнеры и швеи с многолетним опытом.</p></div></article>
           <article class="quality-card tilt reveal"><span>05 / ПЛАН</span><div><h3>Соблюдение сроков</h3><p>Планируем и управляем процессом от лекал до финальной отделки.</p></div></article>
           <article class="quality-card tilt reveal"><span>06 / ФИНАЛ</span><div><h3>Фулфилмент</h3><p>Сборка, упаковка, маркировка, «Честный ЗНАК» и доставка на склады маркетплейсов.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="prices section-pad" id="prices">
-      <div class="wrap">
-        <div class="prices-head">
-          <div><div class="label reveal">Ориентиры стоимости</div><h2 class="section-title reveal">Цена пошива<br>партии</h2></div>
-          <div class="reveal"><p>Цены указаны «от» для заказов от 1 000 единиц. Итог зависит от конструкции, материалов, операций и объёма.</p><div class="minimum">Минимальный заказ: 1 000 единиц на одну модель</div></div>
-        </div>
-        <div class="price-groups">
-          <article class="price-group open reveal"><button class="price-toggle" type="button" aria-expanded="true"><span>01</span><b>Верхняя одежда</b><i>+</i></button><div class="price-body"><div class="price-inner"><div class="price-table">
-            <div class="price-row"><span>Пальто — на подкладке / без подкладки</span><span>от 1600 / 1300 ₽</span></div><div class="price-row"><span>Плащ — на подкладке / без подкладки</span><span>от 1600 / 1300 ₽</span></div><div class="price-row"><span>Куртка — на подкладке / без подкладки</span><span>от 1300 / 1200 ₽</span></div><div class="price-row"><span>Жакет — на подкладке / без подкладки</span><span>от 1300 / 1200 ₽</span></div><div class="price-row"><span>Жилет — на подкладке / без подкладки</span><span>от 650 / 450 ₽</span></div>
-          </div></div></div></article>
-          <article class="price-group reveal"><button class="price-toggle" type="button" aria-expanded="false"><span>02</span><b>Женская и мужская одежда</b><i>+</i></button><div class="price-body"><div class="price-inner"><div class="price-table">
-            <div class="price-row"><span>Блуза, рубашка</span><span>от 650 ₽</span></div><div class="price-row"><span>Топ</span><span>от 350 ₽</span></div><div class="price-row"><span>Платье-сарафан</span><span>от 800 ₽</span></div><div class="price-row"><span>Платье — на подкладке / без</span><span>от 1000 / 800 ₽</span></div><div class="price-row"><span>Легинсы</span><span>от 500 ₽</span></div><div class="price-row"><span>Шорты</span><span>от 500 ₽</span></div><div class="price-row"><span>Юбка — на подкладке / без</span><span>от 500 / 400 ₽</span></div><div class="price-row"><span>Сорочка</span><span>от 350 ₽</span></div><div class="price-row"><span>Пижама: брюки + лонгслив</span><span>от 600 ₽</span></div><div class="price-row"><span>Пижама: шорты + футболка</span><span>от 500 ₽</span></div><div class="price-row"><span>Толстовка, худи, свитшот</span><span>от 600 ₽</span></div><div class="price-row"><span>Спортивные брюки</span><span>от 600 ₽</span></div><div class="price-row"><span>Футболка</span><span>от 200 ₽</span></div><div class="price-row"><span>Лонгслив</span><span>от 300 ₽</span></div><div class="price-row"><span>Боди</span><span>от 300 ₽</span></div>
-          </div></div></div></article>
-          <article class="price-group reveal"><button class="price-toggle" type="button" aria-expanded="false"><span>03</span><b>Детская одежда</b><i>+</i></button><div class="price-body"><div class="price-inner"><div class="price-table">
-            <div class="price-row"><span>Пижама</span><span>от 450 ₽</span></div><div class="price-row"><span>Футболка</span><span>от 150 ₽</span></div><div class="price-row"><span>Лонгслив</span><span>от 200 ₽</span></div><div class="price-row"><span>Толстовка</span><span>от 350 ₽</span></div><div class="price-row"><span>Спортивные брюки</span><span>от 300 ₽</span></div><div class="price-row"><span>Шорты</span><span>от 250 ₽</span></div><div class="price-row"><span>Комбинезон зима / демисезон</span><span>от 950 / 850 ₽</span></div><div class="price-row"><span>Платье — на подкладке / без</span><span>от 500 / 450 ₽</span></div><div class="price-row"><span>Куртка зима / демисезон</span><span>от 650 / 550 ₽</span></div>
-          </div></div></div></article>
         </div>
       </div>
     </section>
@@ -527,7 +433,7 @@
           <div class="label reveal">Новый заказ</div>
           <h2 class="reveal">От идеи<br>до тиража</h2>
           <p class="contact-copy reveal">Расскажите, что нужно произвести и в каком количестве. Уточним исходные данные, технологию и подготовим расчёт.</p>
-          <div class="order-facts reveal"><div class="order-fact"><b>от 1 000</b><span>изделий на одну модель</span></div><div class="order-fact"><b>40 000</b><span>изделий в месяц — текущая мощность</span></div></div>
+          <div class="order-facts reveal"><div class="order-fact"><b>9</b><span>этапов полного цикла</span></div><div class="order-fact"><b>40 000</b><span>изделий в месяц — текущая мощность</span></div></div>
         </div>
         <form class="form reveal" id="lead-form" method="post" action="https://script.google.com/macros/s/AKfycbyk-HXUdEPebcpY-RsOehzRdWI06TE4iaZ86ZlwDOjOqf6J2dX8WaNdKi7Cf35YyOjowQ/exec" target="lead-submit-frame" novalidate>
           <div class="form-grid">
@@ -535,7 +441,7 @@
             <div class="field"><label for="contactValue">Телефон / Telegram</label><input id="contactValue" name="contact" required autocomplete="tel" maxlength="33" aria-describedby="contact-error" placeholder="+7(999)123-45-67 или @username"><small class="field-error" id="contact-error" aria-live="polite"></small></div>
             <div class="field"><label for="product">Изделие</label><input id="product" name="product" required aria-describedby="product-error" placeholder="Например, худи"><small class="field-error" id="product-error" aria-live="polite"></small></div>
             <div class="field"><label for="service">Услуга</label><select id="service" name="service"><option>Комплексное производство</option><option>Разработка лекал</option><option>Пошив образца</option><option>Пошив партии</option><option>Вышивка</option><option>Маркировка и упаковка</option></select></div>
-            <div class="field full"><label for="qty">Количество</label><input id="qty" name="qty" type="number" min="1000" step="1" required inputmode="numeric" aria-describedby="qty-help qty-error" placeholder="От 1 000 единиц"><small id="qty-help">Минимальный заказ — 1 000 изделий на модель.</small><small class="field-error" id="qty-error" aria-live="polite"></small></div>
+            <div class="field full"><label for="qty">Количество</label><input id="qty" name="qty" type="number" min="1" step="1" required inputmode="numeric" aria-describedby="qty-help qty-error" placeholder="Укажите количество"><small id="qty-help">Введите положительное целое число.</small><small class="field-error" id="qty-error" aria-live="polite"></small></div>
             <fieldset class="field choice-field full" data-choice-field="patterns">
               <legend>Есть готовые лекала?</legend>
               <div class="choice-options">
@@ -556,11 +462,12 @@
             <fieldset class="field choice-field full" data-choice-field="branding">
               <legend>Брендирование</legend>
               <div class="choice-options">
-                <label class="choice-option"><input type="radio" name="branding" value="Вышивка" required><span>Вышивка</span></label>
-                <label class="choice-option"><input type="radio" name="branding" value="Печать" required><span>Печать</span></label>
-                <label class="choice-option"><input type="radio" name="branding" value="Шеврон" required><span>Шеврон</span></label>
-                <label class="choice-option"><input type="radio" name="branding" value="Не требуется" required><span>Не требуется</span></label>
+                <label class="choice-option"><input type="checkbox" name="branding" value="Вышивка"><span>Вышивка</span></label>
+                <label class="choice-option"><input type="checkbox" name="branding" value="Печать"><span>Печать</span></label>
+                <label class="choice-option"><input type="checkbox" name="branding" value="Шеврон"><span>Шеврон</span></label>
+                <label class="choice-option"><input type="checkbox" name="branding" value="Не требуется"><span>Не требуется</span></label>
               </div>
+              <small>Можно выбрать несколько вариантов. «Не требуется» выбирается отдельно.</small>
               <small class="field-error" id="branding-error" aria-live="polite"></small>
             </fieldset>
             <div class="field full"><label for="comment">Комментарий</label><textarea id="comment" name="comment" placeholder="Сроки, особенности модели и другие детали"></textarea></div>
@@ -593,7 +500,7 @@
     </section>
   </main>
 
-  <footer><div class="wrap footer-inner"><a class="brand" href="#top">ШитьЁ</a><small>© 2026 Швейное производство «ШитьЁ». Ориентировочные цены действуют для партий от 1 000 единиц.</small><nav class="footer-links"><a href="#production">Производство</a><a href="#prices">Цены</a><a href="#partners">Партнёры</a><a href="#contacts">Контакты</a></nav></div></footer>
+  <footer><div class="wrap footer-inner"><a class="brand" href="#top">ШитьЁ</a><small>© 2026 Швейное производство «ШитьЁ».</small><nav class="footer-links"><a href="#production">Производство</a><a href="#quality">Преимущества</a><a href="#partners">Партнёры</a><a href="#contacts">Контакты</a></nav></div></footer>
 
   <script>
     const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -617,7 +524,7 @@
 
     const needle=document.getElementById('needle-cursor'),finePointer=matchMedia('(hover:hover) and (pointer:fine)').matches;
     if(!reduce&&finePointer)document.documentElement.classList.add('needle-cursor-on');
-    addEventListener('pointermove',event=>{if(reduce||!finePointer)return;const editing=!!event.target.closest('input,textarea,select,[contenteditable="true"]'),action=!!event.target.closest('a,button,[role="button"]');needle.classList.add('active');needle.classList.toggle('editing',editing);needle.classList.toggle('over-action',action);needle.style.transform='translate3d('+(event.clientX-2)+'px,'+(event.clientY-1)+'px,0)'},{passive:true});
+    addEventListener('pointermove',event=>{if(reduce||!finePointer)return;const editing=!!event.target.closest('input,textarea,select,[contenteditable="true"]'),action=!!event.target.closest('a,button,[role="button"]');needle.classList.add('active');needle.classList.toggle('editing',editing);needle.classList.toggle('over-action',action);needle.style.transform='translate3d('+(event.clientX-3)+'px,'+(event.clientY-1.5)+'px,0)'},{passive:true});
     addEventListener('mouseout',event=>{if(!event.relatedTarget&&!event.toElement)needle.classList.remove('active')});
 
     const processLab=document.querySelector('.process-lab'),processTabs=document.querySelector('.process-tabs'),tabs=[...document.querySelectorAll('.process-tab')],images=[...document.querySelectorAll('.process-image')],copies=[...document.querySelectorAll('.process-copy')],processNumber=document.getElementById('process-number');let currentStage=0,processTimer=null,processVisible=false,processManuallyPaused=false;
@@ -633,14 +540,6 @@
     document.addEventListener('visibilitychange',()=>document.hidden?stopProcessAutoplay():startProcessAutoplay());
     new IntersectionObserver(entries=>{processVisible=entries[0].isIntersecting;processVisible?startProcessAutoplay():stopProcessAutoplay()},{threshold:.01}).observe(processLab);
 
-    const dialog=document.getElementById('category-dialog'),dialogImage=document.getElementById('dialog-image'),dialogTitle=document.getElementById('dialog-title'),dialogDescription=document.getElementById('dialog-description');
-    document.querySelectorAll('.category').forEach(card=>{const open=()=>transition(()=>{dialogImage.src=card.dataset.image;dialogImage.alt=card.dataset.title;dialogTitle.textContent=card.dataset.title;dialogDescription.textContent=card.dataset.description;dialog.showModal()});card.addEventListener('click',open);card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open()}})});
-    function closeDialog(){transition(()=>dialog.close())}
-    dialog.querySelector('.dialog-close').addEventListener('click',closeDialog);
-    dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog()});
-    document.getElementById('dialog-cta').addEventListener('click',()=>dialog.close());
-
-    document.querySelectorAll('.price-toggle').forEach(button=>button.addEventListener('click',()=>{const group=button.closest('.price-group'),open=!group.classList.contains('open');group.classList.toggle('open',open);button.setAttribute('aria-expanded',open)}));
     document.getElementById('menu').addEventListener('click',()=>document.getElementById('order').scrollIntoView({behavior:reduce?'auto':'smooth'}));
 
     const leadForm=document.getElementById('lead-form'),leadStatus=document.getElementById('form-status'),leadButton=document.getElementById('lead-submit'),leadFrame=document.getElementById('lead-submit-frame'),nameInput=document.getElementById('name'),nameError=document.getElementById('name-error'),contactInput=document.getElementById('contactValue'),contactError=document.getElementById('contact-error'),productInput=document.getElementById('product'),productError=document.getElementById('product-error'),qtyInput=document.getElementById('qty'),qtyError=document.getElementById('qty-error');
@@ -650,15 +549,17 @@
     function setChoiceError(name,message=''){const field=leadForm.querySelector('[data-choice-field="'+name+'"]'),error=document.getElementById(name+'-error');field.classList.toggle('invalid',!!message);error.textContent=message}
     function formatRussianPhone(value){const digits=value.slice(2).replace(/\D/g,'').slice(0,10);let result='+7';if(digits.length)result+='('+digits.slice(0,3);if(digits.length>=3)result+=')';if(digits.length>3)result+=digits.slice(3,6);if(digits.length>6)result+='-'+digits.slice(6,8);if(digits.length>8)result+='-'+digits.slice(8,10);return result}
     function contactIsValid(){const value=contactInput.value.trim();return /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/.test(value)||/^@\S+$/.test(value)}
-    function quantityIsValid(){const value=qtyInput.value.trim(),qty=Number(value);return value!==''&&Number.isInteger(qty)&&qty>=1000}
+    function quantityIsValid(){const value=qtyInput.value.trim(),qty=Number(value);return value!==''&&Number.isInteger(qty)&&qty>=1}
     function choiceIsSelected(name){return !!leadForm.querySelector('input[name="'+name+'"]:checked')}
     contactInput.addEventListener('input',()=>{const value=contactInput.value;if(!value){setContactError();return}if(value==='+'||value.startsWith('+7')){contactInput.value=value==='+'?value:formatRussianPhone(value);setContactError();return}if(value.startsWith('@')){setContactError();return}contactInput.value='';setContactError('Некорректный ввод')});
     contactInput.addEventListener('blur',()=>{if(contactInput.value&&!contactIsValid())setContactError('Некорректный ввод')});
     nameInput.addEventListener('input',()=>{if(nameInput.value.trim())setInputError(nameInput,nameError)});
     productInput.addEventListener('input',()=>{if(productInput.value.trim())setInputError(productInput,productError)});
     qtyInput.addEventListener('input',()=>{if(quantityIsValid())setInputError(qtyInput,qtyError)});
-    qtyInput.addEventListener('blur',()=>{if(qtyInput.value&&!quantityIsValid()){qtyInput.value='';setInputError(qtyInput,qtyError,'Некорректное количество. Минимум — 1 000 изделий.')}});
-    ['patterns','material','branding'].forEach(name=>leadForm.querySelectorAll('input[name="'+name+'"]').forEach(input=>input.addEventListener('change',()=>setChoiceError(name))));
+    qtyInput.addEventListener('blur',()=>{if(qtyInput.value&&!quantityIsValid())setInputError(qtyInput,qtyError,'Введите положительное целое количество.')});
+    ['patterns','material'].forEach(name=>leadForm.querySelectorAll('input[name="'+name+'"]').forEach(input=>input.addEventListener('change',()=>setChoiceError(name))));
+    const brandingInputs=[...leadForm.querySelectorAll('input[name="branding"]')],brandingNone=brandingInputs.find(input=>input.value==='Не требуется');
+    brandingInputs.forEach(input=>input.addEventListener('change',()=>{if(input.checked){if(input===brandingNone)brandingInputs.forEach(option=>{if(option!==brandingNone)option.checked=false});else brandingNone.checked=false}if(choiceIsSelected('branding'))setChoiceError('branding')}));
     function clearLeadErrors(){setInputError(nameInput,nameError);setContactError();setInputError(productInput,productError);setInputError(qtyInput,qtyError);['patterns','material','branding'].forEach(name=>setChoiceError(name))}
     function leadFinish(ok,message){clearTimeout(leadFallbackTimer);leadSubmitting=false;leadMessageReceived=true;leadButton.disabled=false;leadButton.textContent='Отправить заявку';leadStatus.textContent=message;leadStatus.style.color=ok?'#237b5a':'#a62b3e';if(ok){leadForm.reset();clearLeadErrors()}}
     addEventListener('message',event=>{const data=event.data;if(!data||data.source!=='shityo-lead')return;leadMessageReceived=true;if(data.ok)leadFinish(true,'Спасибо! Заявка '+(data.id?('№ '+data.id+' '):'')+'отправлена. Мы свяжемся с вами для уточнения деталей.');else leadFinish(false,data.message||'Не удалось отправить заявку. Позвоните нам или напишите в Telegram / WhatsApp.')});
@@ -669,7 +570,7 @@
       if(!nameInput.value.trim()){missing.push('имя');setInputError(nameInput,nameError,'Введите имя.');focusTargets.push(nameInput)}
       if(!contactInput.value.trim()){missing.push('телефон или ник в Telegram');setContactError('Введите номер телефона или ник в Telegram.');focusTargets.push(contactInput)}else if(!contactIsValid()){invalid.push('телефон или ник в Telegram');setContactError('Некорректный ввод.');focusTargets.push(contactInput)}
       if(!productInput.value.trim()){missing.push('изделие');setInputError(productInput,productError,'Укажите изделие.');focusTargets.push(productInput)}
-      if(!qtyInput.value.trim()){missing.push('количество');setInputError(qtyInput,qtyError,'Введите количество от 1 000 изделий.');focusTargets.push(qtyInput)}else if(!quantityIsValid()){invalid.push('количество');qtyInput.value='';setInputError(qtyInput,qtyError,'Некорректное количество. Минимум — 1 000 изделий.');focusTargets.push(qtyInput)}
+      if(!qtyInput.value.trim()){missing.push('количество');setInputError(qtyInput,qtyError,'Введите количество.');focusTargets.push(qtyInput)}else if(!quantityIsValid()){invalid.push('количество');setInputError(qtyInput,qtyError,'Введите положительное целое количество.');focusTargets.push(qtyInput)}
       [['patterns','лекала'],['material','материал'],['branding','брендирование']].forEach(([name,label])=>{if(!choiceIsSelected(name)){missing.push(label);setChoiceError(name,'Выберите один вариант.');focusTargets.push(leadForm.querySelector('input[name="'+name+'"]'))}});
       if(missing.length||invalid.length){event.preventDefault();const parts=[];if(missing.length)parts.push('Заполните поля: '+missing.join(', ')+'.');if(invalid.length)parts.push('Исправьте поля: '+invalid.join(', ')+'.');leadStatus.textContent='Заявка не отправлена. '+parts.join(' ');leadStatus.style.color='#a62b3e';focusTargets[0]?.focus();return}
       leadSubmitting=true;leadMessageReceived=false;leadLoadCount=1;leadButton.disabled=true;leadButton.textContent='Отправляем…';leadStatus.textContent='Отправляем заявку…';leadStatus.style.color='';leadFallbackTimer=setTimeout(()=>{if(leadSubmitting&&!leadMessageReceived){leadSubmitting=false;leadButton.disabled=false;leadButton.textContent='Отправить заявку';leadStatus.textContent='Заявка могла быть отправлена, но подтверждение не получено. Не нажимайте повторно сразу — сначала проверьте связь с менеджером.';leadStatus.style.color='#a62b3e'}},45000)
