@@ -218,23 +218,54 @@
     .order-fact b{font-family:Onest,sans-serif;font-size:1.65rem;letter-spacing:-.05em}
     .order-fact span{color:var(--muted);font-size:.82rem}
 
-    .contacts-section{background:#f5f8fc;overflow:hidden}
-    .contacts-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(28px,5vw,80px);align-items:stretch}
-    .contacts-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(12px,2vw,30px) 0}
-    .contacts-copy h2{font-family:Onest,sans-serif;font-size:clamp(3.2rem,6.5vw,7rem);line-height:.9;letter-spacing:-.08em;margin:18px 0 34px}
-    .contact-detail-list{display:grid;gap:13px;margin:0 0 30px}
-    .contact-detail{display:grid;grid-template-columns:112px 1fr;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
-    .contact-detail span{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--blue)}
-    .contact-detail strong,.contact-detail a{font-size:1rem;font-weight:600;line-height:1.45}
-    .contacts-actions{display:flex;flex-wrap:wrap;gap:9px}
-    .contacts-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:.82rem;font-weight:650;transition:.25s}
-    .contacts-actions a:hover{background:var(--blue);border-color:var(--blue);color:#fff}
-    .map-card{position:relative;min-height:590px;border-radius:34px;overflow:hidden;background:#dce8f5;box-shadow:var(--shadow);isolation:isolate}
-    .map-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .map-label{position:absolute;z-index:2;right:18px;bottom:18px;max-width:300px;padding:14px 17px;border:1px solid rgba(255,255,255,.9);border-radius:18px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);box-shadow:0 12px 35px rgba(11,32,56,.13)}
-    .map-label strong,.map-label span{display:block}
-    .map-label strong{font-family:Onest,sans-serif;font-size:1rem;margin-bottom:3px}
-    .map-label span{color:var(--muted);font-size:.78rem}
+    .contacts-section{position:relative;padding:clamp(110px,10vw,160px) 0 90px;background:linear-gradient(180deg,#f9fcff 0%,#edf6ff 58%,#f8fbff 100%);overflow:hidden;isolation:isolate}
+    .contacts-section::before{content:'';position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(23,92,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(23,92,255,.055) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,#000 0%,#000 72%,transparent 100%)}
+    .contacts-section::after{content:'';position:absolute;z-index:-2;width:470px;height:470px;border:2px solid rgba(23,92,255,.14);border-radius:48% 52% 42% 58%;right:-120px;top:90px;transform:rotate(-18deg)}
+    .contacts-content{position:relative;z-index:2}
+    .contacts-head{text-align:center;max-width:900px;margin:0 auto 44px}
+    .contacts-kicker{justify-content:center}
+    .contacts-head h2{font-family:Onest,sans-serif;font-size:clamp(4.2rem,8vw,8rem);font-weight:600;line-height:.82;letter-spacing:-.085em;margin:24px 0 22px}
+    .contacts-head p{max-width:720px;margin:0 auto;color:var(--muted);font-size:clamp(1rem,1.45vw,1.24rem);line-height:1.45}
+    .contacts-visuals{position:absolute;z-index:-1;inset:250px calc(50% - 50vw) 0;pointer-events:none}
+    .contact-visual{position:absolute;bottom:-90px;object-fit:cover;filter:drop-shadow(0 24px 55px rgba(29,83,143,.13))}
+    .contact-visual.left{left:0;width:min(30vw,508px);border-radius:0 42px 42px 0}
+    .contact-visual.right{right:0;width:min(13vw,213px);border-radius:42px 0 0 42px}
+    .contact-visual-cta{position:absolute;right:26px;bottom:26px;width:235px;min-height:78px;display:flex;align-items:center;justify-content:center;padding:14px 23px;border-radius:999px;background:var(--coral);color:#fff;text-transform:uppercase;letter-spacing:.07em;font-size:.7rem;font-weight:700;line-height:1.35;box-shadow:0 16px 34px rgba(255,111,97,.24);pointer-events:auto;transition:transform .25s var(--ease),box-shadow .25s}
+    .contact-visual-cta:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(255,111,97,.32)}
+    .contact-channel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1200px;margin:0 auto 18px}
+    .contact-channel{min-height:154px;display:grid;grid-template-columns:68px minmax(0,1fr) 42px;gap:14px;align-items:center;padding:22px;border:1px solid rgba(23,92,255,.12);border-radius:28px;background:rgba(255,255,255,.92);box-shadow:0 18px 48px rgba(29,83,143,.09);transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+    .contact-channel:hover{transform:translateY(-6px);border-color:rgba(23,92,255,.3);box-shadow:0 24px 58px rgba(29,83,143,.15)}
+    .contact-channel:focus-visible,.contact-visual-cta:focus-visible,.contact-map-external:focus-visible{outline:3px solid rgba(23,92,255,.32);outline-offset:4px}
+    .contact-channel-icon{width:68px;height:68px;display:grid;place-items:center;border:1px solid rgba(23,92,255,.13);border-radius:50%;background:#f2f8ff;color:var(--blue)}
+    .contact-channel-icon svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .contact-channel-icon.telegram{background:linear-gradient(145deg,#39bdf9,#1686ec);color:#fff;border-color:transparent}
+    .contact-channel-icon.telegram svg{width:38px;height:38px;fill:currentColor;stroke:none}
+    .contact-channel-icon.max{overflow:hidden;border:0;background:#fff}
+    .contact-channel-icon.max img{width:100%;height:100%;object-fit:cover}
+    .contact-channel-copy{min-width:0}
+    .contact-channel-copy small{display:block;margin-bottom:10px;color:var(--blue);font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700}
+    .contact-channel-copy strong{display:block;font-family:Onest,sans-serif;font-size:clamp(1rem,1.2vw,1.23rem);line-height:1.2;letter-spacing:-.035em;white-space:nowrap}
+    .contact-channel-copy span{display:block;margin-top:8px;color:var(--muted);font-size:.77rem;line-height:1.45}
+    .contact-channel-arrow{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(23,92,255,.18);border-radius:50%;background:#fff;color:var(--blue);font-size:1.25rem;transition:.25s}
+    .contact-channel:hover .contact-channel-arrow{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateX(3px)}
+    .contact-location-card{max-width:880px;margin:auto;border:1px solid rgba(23,92,255,.12);border-radius:30px;background:rgba(255,255,255,.94);box-shadow:0 20px 56px rgba(29,83,143,.1);overflow:hidden}
+    .contact-location-meta{display:grid;grid-template-columns:1.2fr .8fr;gap:0;padding:24px 28px}
+    .contact-location-item{display:grid;grid-template-columns:62px 1fr;gap:18px;align-items:center;min-width:0}
+    .contact-location-item+.contact-location-item{padding-left:28px;border-left:1px solid var(--line)}
+    .contact-location-icon{width:58px;height:58px;display:grid;place-items:center;border:1px solid rgba(23,92,255,.16);border-radius:50%;background:#f6faff;color:var(--blue)}
+    .contact-location-icon svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .contact-location-copy small{display:block;color:var(--blue);font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:7px}
+    .contact-location-copy strong,.contact-location-copy span{display:block}
+    .contact-location-copy strong{font-family:Onest,sans-serif;font-size:1.08rem;line-height:1.3;letter-spacing:-.025em}
+    .contact-location-copy span{color:var(--muted);font-size:.78rem;margin-top:4px}
+    .contact-map{position:relative;height:210px;background:#dce8f5;overflow:hidden}
+    .contact-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .contact-map-external{min-height:48px;display:flex;align-items:center;justify-content:center;padding:10px 18px;border-top:1px solid var(--line);background:#fff;color:var(--blue);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:.25s}
+    .contact-map-external:hover{background:var(--blue);color:#fff}
+    .contact-map-label{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(300px,70%);padding:13px 16px;border:1px solid rgba(255,255,255,.9);border-radius:17px;background:rgba(255,255,255,.93);box-shadow:0 12px 35px rgba(11,32,56,.13)}
+    .contact-map-label strong,.contact-map-label span{display:block}
+    .contact-map-label strong{font-family:Onest,sans-serif;font-size:.9rem;margin-bottom:3px}
+    .contact-map-label span{color:var(--muted);font-size:.73rem}
 
     footer{background:#fff;border-top:1px solid var(--line);padding:30px 0}
     .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -244,10 +275,10 @@
     @media(max-width:1120px){
       .nav-links,.nav-phone{display:none}.menu{display:block}
       .hero-grid{grid-template-columns:1fr;align-content:end}.hero-visual{min-height:620px}.hero-copy{max-width:760px}
-      .facts-grid,.section-intro,.quality-head,.partners-head,.contact-grid,.contacts-grid{grid-template-columns:1fr}
+      .facts-grid,.section-intro,.quality-head,.partners-head,.contact-grid{grid-template-columns:1fr}
       .process-lab{grid-template-columns:190px 1fr}.process-copy-card{grid-column:1/-1;min-height:auto}.process-media{min-height:620px}
       .partners-grid{grid-template-columns:repeat(3,1fr)}.partner-card:nth-child(6){grid-column:auto}.partners-head p{margin-left:0}
-      .map-card{min-height:520px}
+      .contacts-visuals{position:relative;inset:auto;z-index:0;height:305px;margin:0 calc(var(--pad)*-1) 28px}.contact-visual{bottom:0}.contact-visual.left{width:min(42vw,370px)}.contact-visual.right{width:min(24vw,205px)}.contact-visual-cta{right:26px;bottom:16px}.contact-channel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-channel:last-child{grid-column:1/-1}
     }
     @media(max-width:720px){
       :root{--pad:18px}.needle-cursor{display:none}.nav{top:7px}.nav-shell{min-height:56px;border-radius:16px;padding-left:15px}.nav-actions>.button{display:none}
@@ -259,7 +290,7 @@
       .brand-logo{width:122px;height:38px}
       .partners-grid{grid-template-columns:1fr 1fr;gap:9px}.partner-card{min-height:120px;padding:17px;border-radius:20px}.partner-card:last-child{grid-column:1/-1}.partners-head{margin-bottom:32px}
       .contact-grid{gap:42px}.contact-meta,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.order-facts{grid-template-columns:1fr}
-      .contacts-copy h2{font-size:clamp(3.1rem,17vw,5.2rem)}.contact-detail{grid-template-columns:1fr;gap:5px}.map-card{min-height:430px;border-radius:25px}.map-label{right:14px;left:14px;bottom:14px;max-width:none}
+      .contacts-section{padding:90px 0 64px}.contacts-head{margin-bottom:30px}.contacts-head h2{font-size:clamp(3.9rem,20vw,6rem);margin:20px 0 18px}.contacts-visuals{height:clamp(235px,54vw,320px)}.contact-visual.left{width:72vw;max-width:390px}.contact-visual.right{width:34vw;max-width:180px}.contact-visual-cta{right:14px;bottom:8px;width:180px;min-height:58px;padding:11px 17px;font-size:.59rem}.contact-channel-grid{grid-template-columns:1fr;gap:10px}.contact-channel:last-child{grid-column:auto}.contact-channel{min-height:124px;grid-template-columns:62px minmax(0,1fr) 40px;padding:17px;border-radius:23px}.contact-channel-icon{width:62px;height:62px}.contact-channel-icon svg{width:29px;height:29px}.contact-channel-copy strong{font-size:.98rem}.contact-location-card{border-radius:24px}.contact-location-meta{grid-template-columns:1fr;gap:20px;padding:21px}.contact-location-item{grid-template-columns:52px 1fr;gap:14px}.contact-location-item+.contact-location-item{padding:20px 0 0;border-left:0;border-top:1px solid var(--line)}.contact-location-icon{width:50px;height:50px}.contact-map{height:260px}.contact-map-label{width:calc(100% - 28px)}
       .footer-inner{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap}
     }
     @media(prefers-reduced-motion:reduce){
@@ -282,12 +313,12 @@
   <header class="nav" id="nav">
     <div class="wrap">
       <div class="nav-shell">
-        <a class="brand brand-logo" href="#top" aria-label="ШитьЁ — на главную"><img src="assets/photo-v11/logo-shityo.webp" alt="ШитьЁ — швейное производство"></a>
+          <a class="brand brand-logo" href="#top" aria-label="ШитьЁ — на главную"><img src="assets/photo-v12/logo-shityo.webp" alt="ШитьЁ — швейное производство"></a>
         <nav class="nav-links" aria-label="Основная навигация">
           <a href="#production">Производство</a><a href="#quality">Преимущества</a><a href="#partners">Партнёры</a><a href="#contacts">Контакты</a>
         </nav>
         <div class="nav-actions">
-          <a class="nav-phone" href="tel:+79771357198">+7 977 135-71-98</a>
+          <a class="nav-phone" href="tel:+79855719888">+7 (985) 571-98-88</a>
           <a class="button magnetic" href="#order">Рассчитать заказ</a>
           <button class="menu" id="menu" type="button" aria-label="Перейти к заявке">☰</button>
         </div>
@@ -314,7 +345,7 @@
         </div>
         <div class="hero-visual" id="hero-visual">
           <div class="stitch-orbit" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="assets/photo-v11/hero-knitwear.webp" alt="Трикотажная одежда на манекене в светлом швейном производстве"></div>
+          <div class="hero-photo"><img src="assets/photo-v12/hero-white-hoodie.webp" alt="Белый худи с вышивкой на манекене в светлом швейном производстве"></div>
           <div class="float-note one"><b>40 000</b><span>изделий в месяц — текущая мощность</span></div>
         </div>
       </div>
@@ -322,8 +353,8 @@
 
     <div class="ribbon" aria-label="Возможности производства">
       <div class="ribbon-track">
-        <span>Лекала</span><span>Пошив образца</span><span>Раскрой</span><span>Серийный пошив</span><span>Вышивка</span><span>Термопечать</span><span>ОТК</span><span>Маркировка</span><span>Доставка</span>
-        <span>Лекала</span><span>Пошив образца</span><span>Раскрой</span><span>Серийный пошив</span><span>Вышивка</span><span>Термопечать</span><span>ОТК</span><span>Маркировка</span><span>Доставка</span>
+        <span>Лекала</span><span>Пошив образца</span><span>Раскрой</span><span>Серийный пошив</span><span>Вышивка</span><span>Термопечать</span><span>Сублимация</span><span>Шелкография</span><span>Вязка</span><span>ОТК</span><span>Упаковка</span><span>Доставка</span>
+        <span>Лекала</span><span>Пошив образца</span><span>Раскрой</span><span>Серийный пошив</span><span>Вышивка</span><span>Термопечать</span><span>Сублимация</span><span>Шелкография</span><span>Вязка</span><span>ОТК</span><span>Упаковка</span><span>Доставка</span>
       </div>
     </div>
 
@@ -337,7 +368,7 @@
           <p class="reveal">Современное оборудование и команда технологов, конструкторов, дизайнеров и швей. От идеи до готовой партии — у одного подрядчика.</p>
           <div class="fact-cards">
             <article class="fact-card reveal"><b>2013</b><span>работаем на рынке</span></article>
-            <article class="fact-card reveal"><b>9</b><span>этапов полного цикла</span></article>
+            <article class="fact-card reveal"><b>12</b><span>этапов полного цикла</span></article>
             <article class="fact-card reveal"><b>1</b><span>подрядчик на весь цикл</span></article>
             <article class="fact-card reveal"><b>40 000</b><span>изделий в месяц</span></article>
           </div>
@@ -348,7 +379,7 @@
     <section class="process section-pad" id="production">
       <div class="wrap">
         <div class="section-intro">
-          <div><div class="label reveal">Интерактивный маршрут</div><h2 class="section-title reveal">Девять этапов<br>одной партии</h2></div>
+          <div><div class="label reveal">Интерактивный маршрут</div><h2 class="section-title reveal">12 этапов<br>одной партии</h2></div>
         </div>
         <div class="process-lab reveal">
           <div class="process-tabs" role="tablist" aria-label="Этапы производства">
@@ -358,20 +389,26 @@
             <button class="process-tab" role="tab" aria-selected="false" data-stage="3"><span>04</span><strong>Пошив</strong></button>
             <button class="process-tab" role="tab" aria-selected="false" data-stage="4"><span>05</span><strong>Вышивка</strong></button>
             <button class="process-tab" role="tab" aria-selected="false" data-stage="5"><span>06</span><strong>Термопечать</strong></button>
-            <button class="process-tab" role="tab" aria-selected="false" data-stage="6"><span>07</span><strong>ВТО и ОТК</strong></button>
-            <button class="process-tab" role="tab" aria-selected="false" data-stage="7"><span>08</span><strong>Упаковка</strong></button>
-            <button class="process-tab" role="tab" aria-selected="false" data-stage="8"><span>09</span><strong>Доставка</strong></button>
+            <button class="process-tab" role="tab" aria-selected="false" data-stage="6"><span>07</span><strong>Сублимация</strong></button>
+            <button class="process-tab" role="tab" aria-selected="false" data-stage="7"><span>08</span><strong>Шелкография</strong></button>
+            <button class="process-tab" role="tab" aria-selected="false" data-stage="8"><span>09</span><strong>Вязка</strong></button>
+            <button class="process-tab" role="tab" aria-selected="false" data-stage="9"><span>10</span><strong>ВТО и ОТК</strong></button>
+            <button class="process-tab" role="tab" aria-selected="false" data-stage="10"><span>11</span><strong>Упаковка</strong></button>
+            <button class="process-tab" role="tab" aria-selected="false" data-stage="11"><span>12</span><strong>Доставка</strong></button>
           </div>
           <div class="process-media">
-            <img class="process-image active" src="assets/photo-v11/process-01-patterns.webp" alt="Разработка лекал">
-            <img class="process-image" src="assets/photo-v11/process-02-sample.webp" alt="Пошив первого образца">
-            <img class="process-image" src="assets/photo-v11/process-03-cutting.webp" alt="Раскрой ткани">
-            <img class="process-image" src="assets/photo-v11/process-04-sewing.webp" alt="Серийный пошив одежды">
-            <img class="process-image" src="assets/photo-v11/process-05-embroidery.webp" alt="Машинная вышивка">
-            <img class="process-image" src="assets/photo-v11/process-06-heatpress.webp" alt="Термопечать на одежде">
-            <img class="process-image" src="assets/photo-v11/process-07-quality.webp" alt="Влажно-тепловая обработка и контроль качества">
-            <img class="process-image" src="assets/photo-v11/process-08-packaging.webp" alt="Упаковка и маркировка изделий">
-            <img class="process-image" src="assets/photo-v11/process-09-delivery.webp" alt="Доставка готовой партии">
+            <img class="process-image active" src="assets/photo-v12/process-01-patterns.webp" alt="Разработка лекал">
+            <img class="process-image" src="assets/photo-v12/process-02-sample.webp" alt="Пошив первого образца">
+            <img class="process-image" src="assets/photo-v12/process-03-cutting.webp" alt="Раскрой ткани">
+            <img class="process-image" src="assets/photo-v12/process-04-sewing.webp" alt="Серийный пошив одежды">
+            <img class="process-image" src="assets/photo-v12/process-05-embroidery.webp" alt="Машинная вышивка">
+            <img class="process-image" src="assets/photo-v12/process-06-heatpress.webp" alt="Термопечать на одежде">
+            <img class="process-image" src="assets/photo-v12/process-07-sublimation.webp" alt="Сублимационная печать на ткани">
+            <img class="process-image" src="assets/photo-v12/process-08-screen-printing.webp" alt="Шелкография на изделиях">
+            <img class="process-image" src="assets/photo-v12/process-09-knitting.webp" alt="Вязка изделий на промышленном оборудовании">
+            <img class="process-image" src="assets/photo-v12/process-10-quality.webp" alt="Влажно-тепловая обработка и контроль качества">
+            <img class="process-image" src="assets/photo-v12/process-11-packaging.webp" alt="Упаковка и маркировка изделий">
+            <img class="process-image" src="assets/photo-v12/process-12-delivery.webp" alt="Доставка готовой партии">
             <div class="process-counter"><b id="process-number">01</b><span>этап производства</span></div>
           </div>
           <div class="process-copy-card">
@@ -381,9 +418,12 @@
             <article class="process-copy"><small>04 · Серия</small><h3>Пошив партии</h3><p>Швеи запускают утверждённую модель в производство. Текущая мощность — до 40 000 изделий в месяц.</p></article>
             <article class="process-copy"><small>05 · Брендирование</small><h3>Машинная вышивка</h3><p>Наносим вышивку Ricoma на крой, готовую одежду, бейсболки и шевроны.</p><ul><li>Программа бесплатно от 500 изделий</li><li>Помощь с дизайном и цветами</li></ul></article>
             <article class="process-copy"><small>06 · Нанесение</small><h3>Термопечать</h3><p>Переносим принты и элементы брендирования на крой и готовые изделия с помощью профессиональных термопрессов.</p></article>
-            <article class="process-copy"><small>07 · Качество</small><h3>ВТО и ОТК</h3><p>Пар, тепло и давление придают изделию форму и товарный вид. Межоперационный и финальный контроль выявляет дефекты до отправки.</p><ul><li>Устранение заломов</li><li>Финальный контроль</li><li>Предотвращение брака</li></ul></article>
-            <article class="process-copy"><small>08 · Готовность к продаже</small><h3>Упаковка и маркировка</h3><p>Защищаем изделия, наносим штрихкод и Data Matrix системы «Честный ЗНАК», готовим обязательную информацию о товаре.</p><ul><li>Эмиссия GTIN</li><li>БОПП-упаковка</li><li>Сертификация первого слоя</li></ul></article>
-            <article class="process-copy"><small>09 · Финал</small><h3>Доставка</h3><p>Отправляем упакованный заказ курьерскими службами или доставляем готовую продукцию на склады маркетплейсов.</p></article>
+            <article class="process-copy"><small>07 · Полноцветная печать</small><h3>Сублимация</h3><p>Переносим полноцветное изображение на материал под воздействием температуры и давления. Получаем стойкий принт без дополнительного слоя на поверхности ткани.</p><ul><li>Полноцветная печать</li><li>Стойкое изображение</li><li>Термоперенос</li></ul></article>
+            <article class="process-copy"><small>08 · Тиражное нанесение</small><h3>Шелкография</h3><p>Наносим изображение через печатную сетку специальными красками. Метод подходит для тиражного нанесения плотных, ярких и износостойких принтов.</p><ul><li>Тиражная печать</li><li>Стойкие краски</li><li>Чёткий принт</li></ul></article>
+            <article class="process-copy"><small>09 · Трикотаж</small><h3>Вязка</h3><p>Вяжем детали изделий на промышленном вязальном оборудовании. Подбираем пряжу, плотность и параметры программы под конкретную модель.</p><ul><li>Промышленная вязка</li><li>Подбор пряжи</li><li>Детали изделий</li></ul></article>
+            <article class="process-copy"><small>10 · Качество</small><h3>ВТО и ОТК</h3><p>Пар, тепло и давление придают изделию форму и товарный вид. Межоперационный и финальный контроль выявляет дефекты до отправки.</p><ul><li>Устранение заломов</li><li>Финальный контроль</li><li>Предотвращение брака</li></ul></article>
+            <article class="process-copy"><small>11 · Готовность к продаже</small><h3>Упаковка</h3><p>Маркировка, Честный знак, штрихкод, упаковка.</p><ul><li>Маркировка</li><li>Честный знак</li><li>Штрихкод</li><li>Упаковка</li></ul></article>
+            <article class="process-copy"><small>12 · Финал</small><h3>Доставка</h3><p>Отправляем упакованный заказ курьерскими службами или доставляем готовую продукцию на склады маркетплейсов. Работаем с обеими схемами отгрузки FBO/FBS.</p></article>
             <div class="process-controls"><button class="round" id="process-prev" type="button" aria-label="Предыдущий этап">←</button><button class="round" id="process-next" type="button" aria-label="Следующий этап">→</button></div>
           </div>
         </div>
@@ -433,7 +473,7 @@
           <div class="label reveal">Новый заказ</div>
           <h2 class="reveal">От идеи<br>до тиража</h2>
           <p class="contact-copy reveal">Расскажите, что нужно произвести и в каком количестве. Уточним исходные данные, технологию и подготовим расчёт.</p>
-          <div class="order-facts reveal"><div class="order-fact"><b>9</b><span>этапов полного цикла</span></div><div class="order-fact"><b>40 000</b><span>изделий в месяц — текущая мощность</span></div></div>
+          <div class="order-facts reveal"><div class="order-fact"><b>12</b><span>этапов полного цикла</span></div><div class="order-fact"><b>40 000</b><span>изделий в месяц — текущая мощность</span></div></div>
         </div>
         <form class="form reveal" id="lead-form" method="post" action="https://script.google.com/macros/s/AKfycbyk-HXUdEPebcpY-RsOehzRdWI06TE4iaZ86ZlwDOjOqf6J2dX8WaNdKi7Cf35YyOjowQ/exec" target="lead-submit-frame" novalidate>
           <div class="form-grid">
@@ -480,32 +520,64 @@
       </div>
     </section>
 
-    <section class="contacts-section section-pad" id="contacts">
-      <div class="wrap contacts-grid">
-        <div class="contacts-copy">
-          <div class="label reveal">Производство в Обнинске</div>
-          <h2 class="reveal">Контакты</h2>
-          <div class="contact-detail-list reveal">
-            <div class="contact-detail"><span>Телефон</span><a href="tel:+79771357198">+7 977 135-71-98</a></div>
-            <div class="contact-detail"><span>Адрес</span><strong>проспект Ленина, 121/1<br>Обнинск, Калужская область, 249038</strong></div>
-            <div class="contact-detail"><span>Визит</span><strong>Уточните удобное время по телефону</strong></div>
-          </div>
-          <div class="contacts-actions reveal"><a href="https://wa.me/79771357198" target="_blank" rel="noopener">WhatsApp ↗</a><a href="https://t.me/PILOTAGE_SVR" target="_blank" rel="noopener">Telegram ↗</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%20121%2F1" target="_blank" rel="noopener">Построить маршрут ↗</a></div>
+    <section class="contacts-section" id="contacts" aria-labelledby="contacts-title">
+      <div class="wrap contacts-content">
+        <div class="contacts-head">
+          <div class="label contacts-kicker reveal">Свяжитесь с нами</div>
+          <h2 class="reveal" id="contacts-title">Контакты</h2>
+          <p class="reveal">С удовольствием ответим на ваши вопросы, рассчитаем проект и поможем запустить производство одежды под вашим брендом.</p>
         </div>
-        <div class="map-card reveal">
-          <iframe src="https://www.google.com/maps?q=%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%20121%2F1&amp;output=embed" title="Карта проезда к производству ШитьЁ" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-          <div class="map-label"><strong>ШитьЁ · производство</strong><span>проспект Ленина, 121/1, Обнинск</span></div>
+
+        <div class="contacts-visuals">
+          <img class="contact-visual left" src="assets/contact-v13/hoodie-stack.webp" alt="Стопка худи с фирменной вышивкой ШитьЁ">
+          <img class="contact-visual right" src="assets/contact-v13/white-hoodie-mannequin.webp" alt="Белый худи с вышивкой на манекене">
+          <a class="contact-visual-cta" href="#order">Давайте создадим<br>вашу коллекцию ↗</a>
+        </div>
+
+        <div class="contact-channel-grid reveal">
+          <a class="contact-channel" href="tel:+79855719888" aria-label="Позвонить по номеру +7 985 571-98-88">
+            <span class="contact-channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.7 2.8 9.2 7l-2 1.8c1.2 2.7 3.3 4.8 6 6l1.8-2 4.2 2.5-.7 3.2c-.2.9-1 1.5-1.9 1.5C9.7 20 4 14.3 4 7.4c0-.9.6-1.7 1.5-1.9l1.2-.3Z"/></svg></span>
+            <span class="contact-channel-copy"><small>Телефон</small><strong>+7 (985) 571-98-88</strong><span>Пн–Пт с 9:00 до 18:00<br>Быстро ответим и проконсультируем</span></span>
+            <span class="contact-channel-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="contact-channel" href="https://t.me/marysya_vladimirovna" target="_blank" rel="noopener noreferrer" aria-label="Открыть Telegram">
+            <span class="contact-channel-icon telegram" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.7 3.5 17.9 20c-.2 1.2-.8 1.5-1.8.9l-4.3-3.2-2.1 2c-.2.2-.4.4-.9.4l.3-4.4 8-7.2c.4-.3-.1-.5-.5-.2l-9.9 6.2-4.3-1.3c-1-.3-1-1 .2-1.5L19.4 5c.8-.3 1.5.2 1.3 1.5Z"/></svg></span>
+            <span class="contact-channel-copy"><small>Telegram</small><strong>Напишите нам</strong><span>Обсудим задачу и ответим на вопросы</span></span>
+            <span class="contact-channel-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="contact-channel" href="https://max.ru/u/f9LHodD0cOJJwPUcWdBJBUZo6jmQezcBhDqt18l9F0887FhfAUCxdN7lxVQ" target="_blank" rel="noopener noreferrer" aria-label="Открыть чат ШитьЁ в MAX">
+            <span class="contact-channel-icon max" aria-hidden="true"><img src="assets/contact-v13/max-logo.webp" alt=""></span>
+            <span class="contact-channel-copy"><small>MAX</small><strong>+7 (985) 571-98-88</strong><span>Пишите в MAX<br>Мы всегда на связи</span></span>
+            <span class="contact-channel-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="contact-location-card reveal">
+          <div class="contact-location-meta">
+            <div class="contact-location-item">
+              <span class="contact-location-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <span class="contact-location-copy"><small>Наше расположение</small><strong>проспект Ленина, 121/1</strong><span>Обнинск, Калужская область, 249038</span></span>
+            </div>
+            <div class="contact-location-item">
+              <span class="contact-location-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+              <span class="contact-location-copy"><small>Режим работы</small><strong>Пн–Пт: 9:00–18:00</strong><span>Сб–Вс: по договорённости</span></span>
+            </div>
+          </div>
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps?q=%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%20121%2F1&amp;output=embed" title="Карта проезда к производству ШитьЁ" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="contact-map-label"><strong>Швейное производство «ШитьЁ»</strong><span>проспект Ленина, 121/1 · Обнинск</span></div>
+          </div>
+          <a class="contact-map-external" href="https://yandex.ru/maps/?text=%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%20121%2F1%2C%20%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%9A%D0%B0%D0%BB%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20249038" target="_blank" rel="noopener noreferrer">Открыть полноразмерную карту ↗</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="wrap footer-inner"><a class="brand" href="#top">ШитьЁ</a><small>© 2026 Швейное производство «ШитьЁ».</small><nav class="footer-links"><a href="#production">Производство</a><a href="#quality">Преимущества</a><a href="#partners">Партнёры</a><a href="#contacts">Контакты</a></nav></div></footer>
+  <footer><div class="wrap footer-inner"><a class="brand brand-logo" href="#top" aria-label="ШитьЁ — на главную"><img src="assets/photo-v12/logo-shityo.webp" alt="ШитьЁ — швейное производство"></a><small>© 2026 Швейное производство «ШитьЁ».</small><nav class="footer-links"><a href="#production">Производство</a><a href="#quality">Преимущества</a><a href="#partners">Партнёры</a><a href="#contacts">Контакты</a></nav></div></footer>
 
   <script>
     const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
     const transition=fn=>document.startViewTransition&&!reduce?document.startViewTransition(fn):fn();
-
     const reveals=[...document.querySelectorAll('.reveal')];
     const revealIO=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealIO.unobserve(entry.target)}}),{threshold:.1});
     reveals.forEach(element=>revealIO.observe(element));
@@ -562,7 +634,7 @@
     brandingInputs.forEach(input=>input.addEventListener('change',()=>{if(input.checked){if(input===brandingNone)brandingInputs.forEach(option=>{if(option!==brandingNone)option.checked=false});else brandingNone.checked=false}if(choiceIsSelected('branding'))setChoiceError('branding')}));
     function clearLeadErrors(){setInputError(nameInput,nameError);setContactError();setInputError(productInput,productError);setInputError(qtyInput,qtyError);['patterns','material','branding'].forEach(name=>setChoiceError(name))}
     function leadFinish(ok,message){clearTimeout(leadFallbackTimer);leadSubmitting=false;leadMessageReceived=true;leadButton.disabled=false;leadButton.textContent='Отправить заявку';leadStatus.textContent=message;leadStatus.style.color=ok?'#237b5a':'#a62b3e';if(ok){leadForm.reset();clearLeadErrors()}}
-    addEventListener('message',event=>{const data=event.data;if(!data||data.source!=='shityo-lead')return;leadMessageReceived=true;if(data.ok)leadFinish(true,'Спасибо! Заявка '+(data.id?('№ '+data.id+' '):'')+'отправлена. Мы свяжемся с вами для уточнения деталей.');else leadFinish(false,data.message||'Не удалось отправить заявку. Позвоните нам или напишите в Telegram / WhatsApp.')});
+    addEventListener('message',event=>{const data=event.data;if(!data||data.source!=='shityo-lead')return;leadMessageReceived=true;if(data.ok)leadFinish(true,'Спасибо! Заявка '+(data.id?('№ '+data.id+' '):'')+'отправлена. Мы свяжемся с вами для уточнения деталей.');else leadFinish(false,data.message||'Не удалось отправить заявку. Позвоните нам или напишите в Telegram.')});
     leadFrame.addEventListener('load',()=>{leadLoadCount++;if(!leadSubmitting||leadLoadCount<2)return;setTimeout(()=>{if(leadSubmitting&&!leadMessageReceived)leadFinish(true,'Спасибо! Заявка отправлена. Мы свяжемся с вами для уточнения деталей.')},700)});
     leadForm.addEventListener('submit',event=>{
       const missing=[],invalid=[],focusTargets=[];
