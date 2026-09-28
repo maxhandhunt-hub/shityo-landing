@@ -145,6 +145,35 @@
     .round{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:.25s}
     .round:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
 
+    .catalog{background:#fff;overflow:hidden}
+    .catalog-tools{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:26px}
+    .catalog-note{color:var(--muted);font-size:.86rem}
+    .catalog-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .category{grid-column:span 4;position:relative;min-height:500px;border:0;border-radius:28px;overflow:hidden;background:var(--mist);padding:0;text-align:left;cursor:pointer;color:#fff;view-transition-name:none;box-shadow:0 16px 46px rgba(29,83,143,.1)}
+    .category:nth-child(1){grid-column:span 7;min-height:580px}
+    .category:nth-child(2){grid-column:span 5;min-height:580px}
+    .category img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .5s}
+    .category::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,31,56,.9),rgba(7,31,56,.04) 68%)}
+    .category:hover img,.category:focus-visible img{transform:scale(1.055)}
+    .category:focus-visible{outline:4px solid rgba(23,92,255,.32);outline-offset:4px}
+    .category-content{position:absolute;z-index:2;left:24px;right:70px;bottom:22px}
+    .category-content small{color:#c8e1ff;text-transform:uppercase;letter-spacing:.15em;font-weight:700}
+    .category-content h3{font-family:Onest,sans-serif;font-size:clamp(1.6rem,2.2vw,2.7rem);line-height:1.02;letter-spacing:-.055em;margin:7px 0}
+    .category-content p{margin:0;color:rgba(255,255,255,.76);font-size:.87rem;max-width:520px}
+    .category-arrow{position:absolute;z-index:2;right:18px;top:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);display:grid;place-items:center;transition:.35s}
+    .category:hover .category-arrow,.category:focus-visible .category-arrow{transform:rotate(45deg);background:var(--coral);color:#fff}
+    .category-dialog{width:min(1160px,calc(100% - 24px));max-height:calc(100svh - 24px);border:0;border-radius:34px;padding:0;background:#fff;color:var(--ink);box-shadow:0 40px 120px rgba(6,29,52,.32);overflow:hidden}
+    .category-dialog::backdrop{background:rgba(13,35,58,.45);backdrop-filter:blur(10px)}
+    .dialog-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:640px}
+    .dialog-image{width:100%;height:100%;object-fit:cover;min-height:640px}
+    .dialog-copy{padding:clamp(30px,5vw,72px);display:flex;flex-direction:column;justify-content:center}
+    .dialog-copy small{color:var(--blue);text-transform:uppercase;letter-spacing:.15em;font-weight:700}
+    .dialog-copy h3{font-family:Onest,sans-serif;font-size:clamp(2.4rem,4.5vw,5.4rem);line-height:.92;letter-spacing:-.07em;margin:18px 0 24px}
+    .dialog-copy p{color:var(--muted);font-size:1.05rem;margin:0 0 30px}
+    .dialog-copy .button{align-self:flex-start}
+    .dialog-close{position:absolute;z-index:3;right:18px;top:18px;width:46px;height:46px;border:1px solid rgba(11,32,56,.12);border-radius:50%;background:rgba(255,255,255,.94);font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:0 9px 24px rgba(11,32,56,.12)}
+    .dialog-close:hover,.dialog-close:focus-visible{background:var(--blue);color:#fff}
+
     .quality{background:var(--blue);color:#fff;overflow:hidden}
     .quality::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.18),transparent 30%),repeating-linear-gradient(115deg,transparent 0 85px,rgba(255,255,255,.05) 86px 88px);transform:rotate(-3deg)}
     .quality .wrap{position:relative}
@@ -277,6 +306,7 @@
       .hero-grid{grid-template-columns:1fr;align-content:end}.hero-visual{min-height:620px}.hero-copy{max-width:760px}
       .facts-grid,.section-intro,.quality-head,.partners-head,.contact-grid{grid-template-columns:1fr}
       .process-lab{grid-template-columns:190px 1fr}.process-copy-card{grid-column:1/-1;min-height:auto}.process-media{min-height:620px}
+      .category{grid-column:span 6!important;min-height:520px!important}
       .partners-grid{grid-template-columns:repeat(3,1fr)}.partner-card:nth-child(6){grid-column:auto}.partners-head p{margin-left:0}
       .contacts-visuals{position:relative;inset:auto;z-index:0;height:305px;margin:0 calc(var(--pad)*-1) 28px}.contact-visual{bottom:0}.contact-visual.left{width:min(42vw,370px)}.contact-visual.right{width:min(24vw,205px)}.contact-visual-cta{right:26px;bottom:16px}.contact-channel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-channel:last-child{grid-column:1/-1}
     }
@@ -286,6 +316,7 @@
       .ribbon-track{animation-duration:26s}.section-pad{padding:80px 0}.section-intro{gap:24px;margin-bottom:34px}.section-title{font-size:clamp(2.5rem,12vw,4.3rem)}
       .facts-grid{gap:35px}.fact-cards{grid-template-columns:1fr 1fr}.fact-card{min-height:170px;padding:18px}.fact-card span{font-size:.82rem}
       .process-lab{display:block}.process-tabs{flex-direction:row;overflow-x:auto;padding:0 0 12px;scroll-snap-type:x mandatory}.process-tab{flex:0 0 auto;display:flex;scroll-snap-align:start}.process-tab strong{white-space:nowrap}.process-tab.active{transform:none}.process-media{min-height:64svh;border-radius:25px}.process-copy-card{margin-top:12px;border-radius:25px;min-height:430px}.process-copy h3{font-size:2.35rem}
+      .catalog-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-18px;padding:4px 18px 18px 4px}.category{flex:0 0 86vw;min-height:68svh!important;scroll-snap-align:start}.catalog-tools{align-items:flex-start;flex-direction:column}.dialog-grid{grid-template-columns:1fr}.dialog-image{min-height:42svh;height:42svh}.dialog-copy{padding:28px}.category-dialog{overflow:auto}.dialog-grid{min-height:auto}.category-content{right:22px}
       .quality-grid{grid-template-columns:1fr}.quality-card{min-height:220px}
       .brand-logo{width:122px;height:38px}
       .partners-grid{grid-template-columns:1fr 1fr;gap:9px}.partner-card{min-height:120px;padding:17px;border-radius:20px}.partner-card:last-child{grid-column:1/-1}.partners-head{margin-bottom:32px}
@@ -294,7 +325,7 @@
       .footer-inner{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap}
     }
     @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}.stitch-orbit,.ribbon-track,.contact::before{animation:none}.reveal{opacity:1;transform:none;clip-path:none}.hero-title span,.hero-photo,.process-image{transition:none}
+      html{scroll-behavior:auto}.stitch-orbit,.ribbon-track,.contact::before{animation:none}.reveal{opacity:1;transform:none;clip-path:none}.hero-title span,.hero-photo,.process-image,.category img{transition:none}
       .hero-photo img{filter:none}.fabric-wipe{display:none}
     }
   </style>
@@ -319,7 +350,7 @@
         </nav>
         <div class="nav-actions">
           <a class="nav-phone" href="tel:+79855719888">+7 (985) 571-98-88</a>
-          <a class="button magnetic" href="#order">Рассчитать заказ</a>
+          <a class="button magnetic" href="#order">Отправить заявку</a>
           <button class="menu" id="menu" type="button" aria-label="Перейти к заявке">☰</button>
         </div>
       </div>
@@ -430,6 +461,28 @@
       </div>
     </section>
 
+    <section class="catalog section-pad" id="catalog">
+      <div class="wrap">
+        <div class="section-intro">
+          <div><div class="label reveal">Каталог возможностей</div><h2 class="section-title reveal">Одежда для<br>реальных задач</h2></div>
+          <p class="reveal">Подбираем конструкцию, технологию и материалы под назначение изделия, условия эксплуатации и требования бренда.</p>
+        </div>
+        <div class="catalog-tools reveal"><span class="catalog-note">Нажмите на карточку, чтобы посмотреть подробности.</span><a class="button light magnetic" href="#order">Отправить заявку</a></div>
+        <div class="catalog-grid">
+          <article class="category reveal" tabindex="0" role="button" aria-haspopup="dialog" data-title="Спецодежда" data-description="Разрабатываем и производим спецодежду с учётом условий эксплуатации, эргономики, требований предприятия и задач сотрудников." data-image="assets/category-v14/category-01-workwear.webp"><img src="assets/category-v14/category-01-workwear.webp" alt="Спецодежда" loading="lazy"><span class="category-arrow" aria-hidden="true">↗</span><div class="category-content"><small>01 / 05</small><h3>Спецодежда</h3><p>Функциональная рабочая одежда под требования профессии и предприятия.</p></div></article>
+          <article class="category reveal" tabindex="0" role="button" aria-haspopup="dialog" data-title="Активный отдых" data-description="Производим спортивную и функциональную одежду для тренировок, туризма и активного отдыха с учётом комфорта, износостойкости и свободы движения." data-image="assets/category-v14/category-02-active.webp"><img src="assets/category-v14/category-02-active.webp" alt="Одежда для активного отдыха" loading="lazy"><span class="category-arrow" aria-hidden="true">↗</span><div class="category-content"><small>02 / 05</small><h3>Активный отдых</h3><p>Спортивная и функциональная одежда для активного движения и отдыха.</p></div></article>
+          <article class="category reveal" tabindex="0" role="button" aria-haspopup="dialog" data-title="Мужская и женская одежда" data-description="Производим мужскую и женскую одежду под задачи бренда — от базовых моделей до более сложных серийных изделий." data-image="assets/category-v14/category-03-adults.webp"><img src="assets/category-v14/category-03-adults.webp" alt="Мужская и женская одежда" loading="lazy"><span class="category-arrow" aria-hidden="true">↗</span><div class="category-content"><small>03 / 05</small><h3>Мужская и женская одежда</h3><p>Повседневные и коллекционные модели для мужчин и женщин.</p></div></article>
+          <article class="category reveal" tabindex="0" role="button" aria-haspopup="dialog" data-title="Детская одежда" data-description="Производим детскую одежду с учётом комфорта, свободы движения, особенностей посадки и требований к материалам." data-image="assets/category-v14/category-04-children.webp"><img src="assets/category-v14/category-04-children.webp" alt="Детская одежда" loading="lazy"><span class="category-arrow" aria-hidden="true">↗</span><div class="category-content"><small>04 / 05</small><h3>Детская одежда</h3><p>Комфортная одежда для детей с вниманием к посадке и материалам.</p></div></article>
+          <article class="category reveal" tabindex="0" role="button" aria-haspopup="dialog" data-title="Домашняя одежда" data-description="Производим домашнюю одежду: пижамы, сорочки и халаты. Подбираем материалы, посадку и технологию пошива под концепцию бренда." data-image="assets/category-v14/category-05-homewear.webp"><img src="assets/category-v14/category-05-homewear.webp" alt="Домашняя одежда: пижамы, сорочки и халаты" loading="lazy"><span class="category-arrow" aria-hidden="true">↗</span><div class="category-content"><small>05 / 05</small><h3>Домашняя одежда</h3><p>Пижамы, сорочки и халаты для комфортной домашней коллекции.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="category-dialog" id="category-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Закрыть">×</button>
+      <div class="dialog-grid"><img class="dialog-image" id="dialog-image" alt=""><div class="dialog-copy"><small>Производственная категория</small><h3 id="dialog-title"></h3><p id="dialog-description"></p><a class="button coral magnetic" href="#order" id="dialog-cta">Отправить заявку</a></div></div>
+    </dialog>
+
     <section class="quality section-pad" id="quality">
       <div class="wrap">
         <div class="quality-head">
@@ -503,7 +556,9 @@
               <legend>Брендирование</legend>
               <div class="choice-options">
                 <label class="choice-option"><input type="checkbox" name="branding" value="Вышивка"><span>Вышивка</span></label>
-                <label class="choice-option"><input type="checkbox" name="branding" value="Печать"><span>Печать</span></label>
+                <label class="choice-option"><input type="checkbox" name="branding" value="Термопечать"><span>Термопечать</span></label>
+                <label class="choice-option"><input type="checkbox" name="branding" value="Сублимация"><span>Сублимация</span></label>
+                <label class="choice-option"><input type="checkbox" name="branding" value="Шелкография"><span>Шелкография</span></label>
                 <label class="choice-option"><input type="checkbox" name="branding" value="Шеврон"><span>Шеврон</span></label>
                 <label class="choice-option"><input type="checkbox" name="branding" value="Не требуется"><span>Не требуется</span></label>
               </div>
@@ -556,7 +611,7 @@
           <div class="contact-location-meta">
             <div class="contact-location-item">
               <span class="contact-location-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-              <span class="contact-location-copy"><small>Наше расположение</small><strong>проспект Ленина, 121/1</strong><span>Обнинск, Калужская область, 249038</span></span>
+              <span class="contact-location-copy"><small>Наше расположение</small><strong>проспект Ленина, 121/2</strong><span>Обнинск, Калужская область, 249038</span></span>
             </div>
             <div class="contact-location-item">
               <span class="contact-location-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
@@ -564,10 +619,10 @@
             </div>
           </div>
           <div class="contact-map">
-            <iframe src="https://www.google.com/maps?q=%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%20121%2F1&amp;output=embed" title="Карта проезда к производству ШитьЁ" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            <div class="contact-map-label"><strong>Швейное производство «ШитьЁ»</strong><span>проспект Ленина, 121/1 · Обнинск</span></div>
+            <iframe src="https://www.google.com/maps?q=%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%20121%2F2&amp;output=embed" title="Карта проезда к производству ШитьЁ по адресу проспект Ленина, 121/2, Обнинск" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <div class="contact-map-label"><strong>Швейное производство «ШитьЁ»</strong><span>проспект Ленина, 121/2 · Обнинск</span></div>
           </div>
-          <a class="contact-map-external" href="https://yandex.ru/maps/?text=%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%20121%2F1%2C%20%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%9A%D0%B0%D0%BB%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20249038" target="_blank" rel="noopener noreferrer">Открыть полноразмерную карту ↗</a>
+          <a class="contact-map-external" href="https://yandex.ru/maps/?text=%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%20121%2F2%2C%20%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%9A%D0%B0%D0%BB%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%2C%20249038" target="_blank" rel="noopener noreferrer">Открыть полноразмерную карту ↗</a>
         </div>
       </div>
     </section>
@@ -611,6 +666,13 @@
     document.getElementById('process-next').addEventListener('click',()=>selectProcessStage(currentStage+1));
     document.addEventListener('visibilitychange',()=>document.hidden?stopProcessAutoplay():startProcessAutoplay());
     new IntersectionObserver(entries=>{processVisible=entries[0].isIntersecting;processVisible?startProcessAutoplay():stopProcessAutoplay()},{threshold:.01}).observe(processLab);
+
+    const categoryDialog=document.getElementById('category-dialog'),dialogImage=document.getElementById('dialog-image'),dialogTitle=document.getElementById('dialog-title'),dialogDescription=document.getElementById('dialog-description'),dialogCta=document.getElementById('dialog-cta');let categoryTrigger=null;
+    document.querySelectorAll('.category').forEach(card=>{const open=()=>transition(()=>{categoryTrigger=card;dialogImage.src=card.dataset.image;dialogImage.alt=card.dataset.title;dialogTitle.textContent=card.dataset.title;dialogDescription.textContent=card.dataset.description;categoryDialog.showModal()});card.addEventListener('click',open);card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open()}})});
+    function closeCategoryDialog(){transition(()=>categoryDialog.close());categoryTrigger?.focus()}
+    categoryDialog.querySelector('.dialog-close').addEventListener('click',closeCategoryDialog);
+    categoryDialog.addEventListener('click',event=>{if(event.target===categoryDialog)closeCategoryDialog()});
+    dialogCta.addEventListener('click',()=>categoryDialog.close());
 
     document.getElementById('menu').addEventListener('click',()=>document.getElementById('order').scrollIntoView({behavior:reduce?'auto':'smooth'}));
 
