@@ -80,7 +80,7 @@
     .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:31px}
     .hero-visual{position:relative;min-height:min(70vw,730px);perspective:1200px}
     .hero-photo{position:absolute;inset:4% 0 8% 6%;overflow:hidden;border-radius:42% 14% 34% 12% / 18% 30% 14% 35%;box-shadow:var(--shadow);transform:rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .2s linear}
-    .hero-photo img{width:100%;height:100%;object-fit:cover}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
     .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 48%)}
     .stitch-orbit{position:absolute;inset:0;border:2px dashed rgba(23,92,255,.24);border-radius:48% 18% 38% 16% / 22% 38% 19% 42%;animation:orbit 22s linear infinite}
     .stitch-orbit::after{content:'';position:absolute;right:8%;top:8%;width:19px;height:19px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 10px rgba(255,111,97,.16)}
@@ -205,7 +205,9 @@
     .partner-name.serif{font-family:Georgia,serif;font-size:clamp(1.35rem,2.2vw,2rem);font-weight:400;letter-spacing:.08em}
     .partner-name.script{font-family:Georgia,serif;font-style:italic;font-size:clamp(1.3rem,2.2vw,2.05rem);font-weight:600}
     .partner-name.compact{font-size:clamp(1rem,1.55vw,1.45rem);letter-spacing:.08em}
-    .partner-card:nth-child(6){grid-column:2}
+    .partner-card.logo-card{padding:0}
+    .partner-card.logo-card::after{display:none}
+    .partner-logo{position:relative;z-index:1;width:100%;height:148px;max-width:100%;max-height:148px;object-fit:contain;transform:scale(1.16);transform-origin:center}
 
     .contact{background:linear-gradient(145deg,#dceeff 0%,#f9fcff 48%,#d7f7ee 100%);overflow:hidden}
     .contact::before{content:'';position:absolute;width:560px;height:560px;border:2px dashed rgba(23,92,255,.2);border-radius:50%;right:-180px;top:-190px;animation:orbit 34s linear infinite}
@@ -240,6 +242,12 @@
     .choice-option input:checked+span{border-color:var(--coral);background:rgba(255,91,94,.09);color:#d63d45;box-shadow:0 0 0 1px var(--coral)}
     .choice-option input:focus-visible+span{outline:3px solid rgba(23,92,255,.25);outline-offset:2px}
     .choice-field.invalid .choice-options{border-radius:15px;box-shadow:0 0 0 2px rgba(166,43,62,.18)}
+    .consent-field{margin-top:2px}
+    .consent-label{display:flex;align-items:flex-start;gap:11px;cursor:pointer;color:var(--ink);font-size:.86rem;line-height:1.45}
+    .consent-label input{inline-size:18px;block-size:18px;flex:0 0 auto;margin:2px 0 0;accent-color:var(--blue)}
+    .consent-label input:focus-visible{outline:3px solid rgba(23,92,255,.25);outline-offset:3px}
+    .consent-field.invalid .consent-label{color:#a62b3e}
+    .consent-field .field-error{display:block;min-height:1.15em;color:#a62b3e;font-size:.72rem;margin:6px 0 0 29px}
     .form .button{width:100%;margin-top:24px}
     .form-status{display:block;color:var(--muted);font-size:.75rem;margin-top:13px;min-height:23px}
     .order-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:34px}
@@ -307,7 +315,7 @@
       .facts-grid,.section-intro,.quality-head,.partners-head,.contact-grid{grid-template-columns:1fr}
       .process-lab{grid-template-columns:190px 1fr}.process-copy-card{grid-column:1/-1;min-height:auto}.process-media{min-height:620px}
       .category{grid-column:span 6!important;min-height:520px!important}
-      .partners-grid{grid-template-columns:repeat(3,1fr)}.partner-card:nth-child(6){grid-column:auto}.partners-head p{margin-left:0}
+      .partners-grid{grid-template-columns:repeat(3,1fr)}.partners-head p{margin-left:0}
       .contacts-visuals{position:relative;inset:auto;z-index:0;height:305px;margin:0 calc(var(--pad)*-1) 28px}.contact-visual{bottom:0}.contact-visual.left{width:min(42vw,370px)}.contact-visual.right{width:min(24vw,205px)}.contact-visual-cta{right:26px;bottom:16px}.contact-channel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-channel:last-child{grid-column:1/-1}
     }
     @media(max-width:720px){
@@ -319,7 +327,7 @@
       .catalog-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-18px;padding:4px 18px 18px 4px}.category{flex:0 0 86vw;min-height:68svh!important;scroll-snap-align:start}.catalog-tools{align-items:flex-start;flex-direction:column}.dialog-grid{grid-template-columns:1fr}.dialog-image{min-height:42svh;height:42svh}.dialog-copy{padding:28px}.category-dialog{overflow:auto}.dialog-grid{min-height:auto}.category-content{right:22px}
       .quality-grid{grid-template-columns:1fr}.quality-card{min-height:220px}
       .brand-logo{width:122px;height:38px}
-      .partners-grid{grid-template-columns:1fr 1fr;gap:9px}.partner-card{min-height:120px;padding:17px;border-radius:20px}.partner-card:last-child{grid-column:1/-1}.partners-head{margin-bottom:32px}
+      .partners-grid{grid-template-columns:1fr 1fr;gap:9px}.partner-card{min-height:120px;padding:17px;border-radius:20px}.partner-card.logo-card{padding:0}.partner-logo{height:120px;max-height:120px}.partners-head{margin-bottom:32px}
       .contact-grid{gap:42px}.contact-meta,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.order-facts{grid-template-columns:1fr}
       .contacts-section{padding:90px 0 64px}.contacts-head{margin-bottom:30px}.contacts-head h2{font-size:clamp(3.9rem,20vw,6rem);margin:20px 0 18px}.contacts-visuals{height:clamp(235px,54vw,320px)}.contact-visual.left{width:72vw;max-width:390px}.contact-visual.right{width:34vw;max-width:180px}.contact-visual-cta{right:14px;bottom:8px;width:180px;min-height:58px;padding:11px 17px;font-size:.59rem}.contact-channel-grid{grid-template-columns:1fr;gap:10px}.contact-channel:last-child{grid-column:auto}.contact-channel{min-height:124px;grid-template-columns:62px minmax(0,1fr) 40px;padding:17px;border-radius:23px}.contact-channel-icon{width:62px;height:62px}.contact-channel-icon svg{width:29px;height:29px}.contact-channel-copy strong{font-size:.98rem}.contact-location-card{border-radius:24px}.contact-location-meta{grid-template-columns:1fr;gap:20px;padding:21px}.contact-location-item{grid-template-columns:52px 1fr;gap:14px}.contact-location-item+.contact-location-item{padding:20px 0 0;border-left:0;border-top:1px solid var(--line)}.contact-location-icon{width:50px;height:50px}.contact-map{height:260px}.contact-map-label{width:calc(100% - 28px)}
       .footer-inner{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap}
@@ -376,7 +384,7 @@
         </div>
         <div class="hero-visual" id="hero-visual">
           <div class="stitch-orbit" aria-hidden="true"></div>
-          <div class="hero-photo"><img src="assets/photo-v12/hero-white-hoodie.webp" alt="Белый худи с вышивкой на манекене в светлом швейном производстве"></div>
+          <div class="hero-photo"><img src="assets/photo-v12/hero-white-hoodie.webp" alt="Швейное производство «ШитьЁ» — утверждённый визуал Hero"></div>
           <div class="float-note one"><b>40 000</b><span>изделий в месяц — текущая мощность</span></div>
         </div>
       </div>
@@ -446,12 +454,12 @@
             <article class="process-copy active"><small>01 · Конструкция</small><h3>Разработка лекал и градация</h3><p>Изучаем эскизы, фотографии или образцы, создаём базовое лекало, уточняем посадку и детали, масштабируем по размерному ряду и проводим финальную проверку.</p><ul><li>Анализ дизайна</li><li>Базовое лекало</li><li>Градация размеров</li></ul></article>
             <article class="process-copy"><small>02 · Проверка идеи</small><h3>Пошив образца</h3><p>Создаём опытный образец, проводим примерку, устраняем недочёты и готовим модель к массовому производству.</p><ul><li>Примерка и корректировка</li><li>Финальное утверждение</li></ul></article>
             <article class="process-copy"><small>03 · Точность</small><h3>Раскрой</h3><p>Высокоточный раскрой на современном оборудовании с подготовкой деталей к дальнейшему производственному потоку.</p></article>
-            <article class="process-copy"><small>04 · Серия</small><h3>Пошив партии</h3><p>Швеи запускают утверждённую модель в производство. Текущая мощность — до 40 000 изделий в месяц.</p></article>
+            <article class="process-copy"><small>04 · Серия</small><h3>Пошив партии</h3><p>Утвержденная модель запускается в производство. Текущая мощность — до 40 000 изделий в месяц.</p></article>
             <article class="process-copy"><small>05 · Брендирование</small><h3>Машинная вышивка</h3><p>Наносим вышивку Ricoma на крой, готовую одежду, бейсболки и шевроны.</p><ul><li>Программа бесплатно от 500 изделий</li><li>Помощь с дизайном и цветами</li></ul></article>
             <article class="process-copy"><small>06 · Нанесение</small><h3>Термопечать</h3><p>Переносим принты и элементы брендирования на крой и готовые изделия с помощью профессиональных термопрессов.</p></article>
             <article class="process-copy"><small>07 · Полноцветная печать</small><h3>Сублимация</h3><p>Переносим полноцветное изображение на материал под воздействием температуры и давления. Получаем стойкий принт без дополнительного слоя на поверхности ткани.</p><ul><li>Полноцветная печать</li><li>Стойкое изображение</li><li>Термоперенос</li></ul></article>
             <article class="process-copy"><small>08 · Тиражное нанесение</small><h3>Шелкография</h3><p>Наносим изображение через печатную сетку специальными красками. Метод подходит для тиражного нанесения плотных, ярких и износостойких принтов.</p><ul><li>Тиражная печать</li><li>Стойкие краски</li><li>Чёткий принт</li></ul></article>
-            <article class="process-copy"><small>09 · Трикотаж</small><h3>Вязка</h3><p>Вяжем детали изделий на промышленном вязальном оборудовании. Подбираем пряжу, плотность и параметры программы под конкретную модель.</p><ul><li>Промышленная вязка</li><li>Подбор пряжи</li><li>Детали изделий</li></ul></article>
+            <article class="process-copy"><small>09 · Трикотаж</small><h3>Вязка</h3><p>Вяжем детали изделий на промышленном вязальном оборудовании. Подбираем пряжу, плотность и параметры программы под конкретную модель.</p><p>Вязальное оборудование от 7 до 12 класса.</p><ul><li>Промышленная вязка</li><li>Подбор пряжи</li><li>Детали изделий</li></ul></article>
             <article class="process-copy"><small>10 · Качество</small><h3>ВТО и ОТК</h3><p>Пар, тепло и давление придают изделию форму и товарный вид. Межоперационный и финальный контроль выявляет дефекты до отправки.</p><ul><li>Устранение заломов</li><li>Финальный контроль</li><li>Предотвращение брака</li></ul></article>
             <article class="process-copy"><small>11 · Готовность к продаже</small><h3>Упаковка</h3><p>Маркировка, Честный знак, штрихкод, упаковка.</p><ul><li>Маркировка</li><li>Честный знак</li><li>Штрихкод</li><li>Упаковка</li></ul></article>
             <article class="process-copy"><small>12 · Финал</small><h3>Доставка</h3><p>Отправляем упакованный заказ курьерскими службами или доставляем готовую продукцию на склады маркетплейсов. Работаем с обеими схемами отгрузки FBO/FBS.</p></article>
@@ -514,7 +522,10 @@
           <article class="partner-card dark reveal" aria-label="Milana"><span class="partner-name tracked">MILANA</span></article>
           <article class="partner-card reveal" aria-label="Same"><span class="partner-name script">Same</span></article>
           <article class="partner-card reveal" aria-label="Lilum"><span class="partner-name serif">LILUM</span></article>
-          <article class="partner-card dark reveal" aria-label="Hygger"><span class="partner-name script">HYGGER!</span></article>
+          <article class="partner-card logo-card reveal" aria-label="LaFamily"><img class="partner-logo" src="assets/partners-v15/lafamily.png" alt="LaFamily" loading="lazy"></article>
+          <article class="partner-card logo-card reveal" aria-label="8BASE"><img class="partner-logo" src="assets/partners-v15/8base.png" alt="8BASE" loading="lazy"></article>
+          <article class="partner-card logo-card reveal" aria-label="PROTREND"><img class="partner-logo" src="assets/partners-v15/protrend.png" alt="PROTREND" loading="lazy"></article>
+          <article class="partner-card logo-card reveal" aria-label="HYPEGRL"><img class="partner-logo" src="assets/partners-v15/hypegrl.png" alt="HYPEGRL" loading="lazy"></article>
           <article class="partner-card reveal" aria-label="Mira Jane"><span class="partner-name script">Mira Jane</span></article>
         </div>
       </div>
@@ -566,6 +577,10 @@
               <small class="field-error" id="branding-error" aria-live="polite"></small>
             </fieldset>
             <div class="field full"><label for="comment">Комментарий</label><textarea id="comment" name="comment" placeholder="Сроки, особенности модели и другие детали"></textarea></div>
+            <div class="consent-field full" id="consent-field">
+              <label class="consent-label" for="consentPersonalData"><input id="consentPersonalData" name="consentPersonalData" type="checkbox" value="true" required aria-describedby="consent-error"><span>Даю согласие на обработку персональных данных</span></label>
+              <small class="field-error" id="consent-error" aria-live="polite"></small>
+            </div>
           </div>
           
           <button class="button coral magnetic" id="lead-submit" type="submit">Отправить заявку</button>
@@ -676,11 +691,12 @@
 
     document.getElementById('menu').addEventListener('click',()=>document.getElementById('order').scrollIntoView({behavior:reduce?'auto':'smooth'}));
 
-    const leadForm=document.getElementById('lead-form'),leadStatus=document.getElementById('form-status'),leadButton=document.getElementById('lead-submit'),leadFrame=document.getElementById('lead-submit-frame'),nameInput=document.getElementById('name'),nameError=document.getElementById('name-error'),contactInput=document.getElementById('contactValue'),contactError=document.getElementById('contact-error'),productInput=document.getElementById('product'),productError=document.getElementById('product-error'),qtyInput=document.getElementById('qty'),qtyError=document.getElementById('qty-error');
+    const leadForm=document.getElementById('lead-form'),leadStatus=document.getElementById('form-status'),leadButton=document.getElementById('lead-submit'),leadFrame=document.getElementById('lead-submit-frame'),nameInput=document.getElementById('name'),nameError=document.getElementById('name-error'),contactInput=document.getElementById('contactValue'),contactError=document.getElementById('contact-error'),productInput=document.getElementById('product'),productError=document.getElementById('product-error'),qtyInput=document.getElementById('qty'),qtyError=document.getElementById('qty-error'),consentInput=document.getElementById('consentPersonalData'),consentField=document.getElementById('consent-field'),consentError=document.getElementById('consent-error');
     let leadSubmitting=false,leadMessageReceived=false,leadLoadCount=0,leadFallbackTimer=null;
     function setContactError(message=''){contactError.textContent=message;contactInput.setAttribute('aria-invalid',message?'true':'false')}
     function setInputError(input,error,message=''){error.textContent=message;input.setAttribute('aria-invalid',message?'true':'false')}
     function setChoiceError(name,message=''){const field=leadForm.querySelector('[data-choice-field="'+name+'"]'),error=document.getElementById(name+'-error');field.classList.toggle('invalid',!!message);error.textContent=message}
+    function setConsentError(message=''){consentField.classList.toggle('invalid',!!message);consentInput.setAttribute('aria-invalid',message?'true':'false');consentError.textContent=message}
     function formatRussianPhone(value){const digits=value.slice(2).replace(/\D/g,'').slice(0,10);let result='+7';if(digits.length)result+='('+digits.slice(0,3);if(digits.length>=3)result+=')';if(digits.length>3)result+=digits.slice(3,6);if(digits.length>6)result+='-'+digits.slice(6,8);if(digits.length>8)result+='-'+digits.slice(8,10);return result}
     function contactIsValid(){const value=contactInput.value.trim();return /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/.test(value)||/^@\S+$/.test(value)}
     function quantityIsValid(){const value=qtyInput.value.trim(),qty=Number(value);return value!==''&&Number.isInteger(qty)&&qty>=1}
@@ -694,7 +710,8 @@
     ['patterns','material'].forEach(name=>leadForm.querySelectorAll('input[name="'+name+'"]').forEach(input=>input.addEventListener('change',()=>setChoiceError(name))));
     const brandingInputs=[...leadForm.querySelectorAll('input[name="branding"]')],brandingNone=brandingInputs.find(input=>input.value==='Не требуется');
     brandingInputs.forEach(input=>input.addEventListener('change',()=>{if(input.checked){if(input===brandingNone)brandingInputs.forEach(option=>{if(option!==brandingNone)option.checked=false});else brandingNone.checked=false}if(choiceIsSelected('branding'))setChoiceError('branding')}));
-    function clearLeadErrors(){setInputError(nameInput,nameError);setContactError();setInputError(productInput,productError);setInputError(qtyInput,qtyError);['patterns','material','branding'].forEach(name=>setChoiceError(name))}
+    consentInput.addEventListener('change',()=>{if(consentInput.checked)setConsentError()});
+    function clearLeadErrors(){setInputError(nameInput,nameError);setContactError();setInputError(productInput,productError);setInputError(qtyInput,qtyError);['patterns','material','branding'].forEach(name=>setChoiceError(name));setConsentError()}
     function leadFinish(ok,message){clearTimeout(leadFallbackTimer);leadSubmitting=false;leadMessageReceived=true;leadButton.disabled=false;leadButton.textContent='Отправить заявку';leadStatus.textContent=message;leadStatus.style.color=ok?'#237b5a':'#a62b3e';if(ok){leadForm.reset();clearLeadErrors()}}
     addEventListener('message',event=>{const data=event.data;if(!data||data.source!=='shityo-lead')return;leadMessageReceived=true;if(data.ok)leadFinish(true,'Спасибо! Заявка '+(data.id?('№ '+data.id+' '):'')+'отправлена. Мы свяжемся с вами для уточнения деталей.');else leadFinish(false,data.message||'Не удалось отправить заявку. Позвоните нам или напишите в Telegram.')});
     leadFrame.addEventListener('load',()=>{leadLoadCount++;if(!leadSubmitting||leadLoadCount<2)return;setTimeout(()=>{if(leadSubmitting&&!leadMessageReceived)leadFinish(true,'Спасибо! Заявка отправлена. Мы свяжемся с вами для уточнения деталей.')},700)});
@@ -706,6 +723,7 @@
       if(!productInput.value.trim()){missing.push('изделие');setInputError(productInput,productError,'Укажите изделие.');focusTargets.push(productInput)}
       if(!qtyInput.value.trim()){missing.push('количество');setInputError(qtyInput,qtyError,'Введите количество.');focusTargets.push(qtyInput)}else if(!quantityIsValid()){invalid.push('количество');setInputError(qtyInput,qtyError,'Введите положительное целое количество.');focusTargets.push(qtyInput)}
       [['patterns','лекала'],['material','материал'],['branding','брендирование']].forEach(([name,label])=>{if(!choiceIsSelected(name)){missing.push(label);setChoiceError(name,'Выберите один вариант.');focusTargets.push(leadForm.querySelector('input[name="'+name+'"]'))}});
+      if(!consentInput.checked){missing.push('согласие на обработку персональных данных');setConsentError('Необходимо дать согласие на обработку персональных данных.');focusTargets.push(consentInput)}
       if(missing.length||invalid.length){event.preventDefault();const parts=[];if(missing.length)parts.push('Заполните поля: '+missing.join(', ')+'.');if(invalid.length)parts.push('Исправьте поля: '+invalid.join(', ')+'.');leadStatus.textContent='Заявка не отправлена. '+parts.join(' ');leadStatus.style.color='#a62b3e';focusTargets[0]?.focus();return}
       leadSubmitting=true;leadMessageReceived=false;leadLoadCount=1;leadButton.disabled=true;leadButton.textContent='Отправляем…';leadStatus.textContent='Отправляем заявку…';leadStatus.style.color='';leadFallbackTimer=setTimeout(()=>{if(leadSubmitting&&!leadMessageReceived){leadSubmitting=false;leadButton.disabled=false;leadButton.textContent='Отправить заявку';leadStatus.textContent='Заявка могла быть отправлена, но подтверждение не получено. Не нажимайте повторно сразу — сначала проверьте связь с менеджером.';leadStatus.style.color='#a62b3e'}},45000)
     });
