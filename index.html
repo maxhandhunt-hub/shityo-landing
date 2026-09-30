@@ -208,6 +208,10 @@
     .partner-card.logo-card{padding:0}
     .partner-card.logo-card::after{display:none}
     .partner-logo{position:relative;z-index:1;width:100%;height:148px;max-width:100%;max-height:148px;object-fit:contain;transform:scale(1.16);transform-origin:center}
+    .partner-card.brand-card{padding:0;border:0;background:transparent;box-shadow:none}
+    .partner-card.brand-card::before,.partner-card.brand-card::after{display:none}
+    .brand-card-image{position:relative;z-index:1;display:block;width:100%;height:148px;max-width:100%;max-height:148px;object-fit:contain}
+    .partner-card.brand-card:hover{box-shadow:0 18px 50px rgba(11,32,56,.11)}
 
     .contact{background:linear-gradient(145deg,#dceeff 0%,#f9fcff 48%,#d7f7ee 100%);overflow:hidden}
     .contact::before{content:'';position:absolute;width:560px;height:560px;border:2px dashed rgba(23,92,255,.2);border-radius:50%;right:-180px;top:-190px;animation:orbit 34s linear infinite}
@@ -327,7 +331,7 @@
       .catalog-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-right:-18px;padding:4px 18px 18px 4px}.category{flex:0 0 86vw;min-height:68svh!important;scroll-snap-align:start}.catalog-tools{align-items:flex-start;flex-direction:column}.dialog-grid{grid-template-columns:1fr}.dialog-image{min-height:42svh;height:42svh}.dialog-copy{padding:28px}.category-dialog{overflow:auto}.dialog-grid{min-height:auto}.category-content{right:22px}
       .quality-grid{grid-template-columns:1fr}.quality-card{min-height:220px}
       .brand-logo{width:122px;height:38px}
-      .partners-grid{grid-template-columns:1fr 1fr;gap:9px}.partner-card{min-height:120px;padding:17px;border-radius:20px}.partner-card.logo-card{padding:0}.partner-logo{height:120px;max-height:120px}.partners-head{margin-bottom:32px}
+      .partners-grid{grid-template-columns:1fr 1fr;gap:9px}.partner-card{min-height:120px;padding:17px;border-radius:20px}.partner-card.logo-card,.partner-card.brand-card{padding:0}.partner-logo,.brand-card-image{height:120px;max-height:120px}.partners-head{margin-bottom:32px}
       .contact-grid{gap:42px}.contact-meta,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.order-facts{grid-template-columns:1fr}
       .contacts-section{padding:90px 0 64px}.contacts-head{margin-bottom:30px}.contacts-head h2{font-size:clamp(3.9rem,20vw,6rem);margin:20px 0 18px}.contacts-visuals{height:clamp(235px,54vw,320px)}.contact-visual.left{width:72vw;max-width:390px}.contact-visual.right{width:34vw;max-width:180px}.contact-visual-cta{right:14px;bottom:8px;width:180px;min-height:58px;padding:11px 17px;font-size:.59rem}.contact-channel-grid{grid-template-columns:1fr;gap:10px}.contact-channel:last-child{grid-column:auto}.contact-channel{min-height:124px;grid-template-columns:62px minmax(0,1fr) 40px;padding:17px;border-radius:23px}.contact-channel-icon{width:62px;height:62px}.contact-channel-icon svg{width:29px;height:29px}.contact-channel-copy strong{font-size:.98rem}.contact-location-card{border-radius:24px}.contact-location-meta{grid-template-columns:1fr;gap:20px;padding:21px}.contact-location-item{grid-template-columns:52px 1fr;gap:14px}.contact-location-item+.contact-location-item{padding:20px 0 0;border-left:0;border-top:1px solid var(--line)}.contact-location-icon{width:50px;height:50px}.contact-map{height:260px}.contact-map-label{width:calc(100% - 28px)}
       .footer-inner{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap}
@@ -515,12 +519,12 @@
           <p class="reveal">Работаем с российскими брендами одежды: от первых партий до регулярного серийного производства.</p>
         </div>
         <div class="partners-grid" aria-label="Партнёры производства">
-          <article class="partner-card reveal" aria-label="Zipkidz"><span class="partner-name compact">zipkidz</span></article>
-          <article class="partner-card dark reveal" aria-label="Moorka"><span class="partner-name tracked">MOORKA</span></article>
-          <article class="partner-card reveal" aria-label="Re Plain"><span class="partner-name compact">RE PLAIN</span></article>
-          <article class="partner-card dark reveal" aria-label="Darkone"><span class="partner-name tracked">DARKONE</span></article>
+          <article class="partner-card brand-card reveal" aria-label="Zipkidz"><img class="brand-card-image" src="assets/partners-v15/zipkidz-card.png" alt="ZIPKIDZ" loading="lazy"></article>
+          <article class="partner-card brand-card reveal" aria-label="Moorka"><img class="brand-card-image" src="assets/partners-v15/moorka-card.png" alt="MOORKA" loading="lazy"></article>
+          <article class="partner-card brand-card reveal" aria-label="Re Plain"><img class="brand-card-image" src="assets/partners-v15/replain-card.png" alt="RE PLAIN" loading="lazy"></article>
+          <article class="partner-card brand-card reveal" aria-label="Darkone"><img class="brand-card-image" src="assets/partners-v15/darkone-card.png" alt="DARKONE" loading="lazy"></article>
           <article class="partner-card dark reveal" aria-label="Milana"><span class="partner-name tracked">MILANA</span></article>
-          <article class="partner-card reveal" aria-label="Same"><span class="partner-name script">Same</span></article>
+          <article class="partner-card brand-card reveal" aria-label="Same"><img class="brand-card-image" src="assets/partners-v15/same-card.png" alt="same!" loading="lazy"></article>
           <article class="partner-card reveal" aria-label="Lilum"><span class="partner-name serif">LILUM</span></article>
           <article class="partner-card logo-card reveal" aria-label="LaFamily"><img class="partner-logo" src="assets/partners-v15/lafamily.png" alt="LaFamily" loading="lazy"></article>
           <article class="partner-card logo-card reveal" aria-label="8BASE"><img class="partner-logo" src="assets/partners-v15/8base.png" alt="8BASE" loading="lazy"></article>
